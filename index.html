@@ -23,7 +23,7 @@ flex-direction:column;
 align-items:center;
 }
 
-/* CONTENEDOR GENERAL CENTRADO */
+/* CONTENEDOR */
 .main{
 width:100%;
 max-width:1200px;
@@ -49,6 +49,7 @@ text-decoration:none;
 }
 
 /* HERO */
+
 .hero{
 min-height:100vh;
 display:flex;
@@ -67,6 +68,7 @@ color:transparent;
 }
 
 /* PERFIL */
+
 .profile-wrapper{
 width:100%;
 background:#efe1cc;
@@ -74,66 +76,67 @@ border-radius:20px;
 padding:40px;
 display:flex;
 margin-top:30px;
+gap:40px;
 align-items:center;
 }
 
-/* IZQUIERDA */
+/* FOTO */
+
 .profile-left{
 width:40%;
 display:flex;
 justify-content:center;
-align-items:center;
 }
 
-/* TARJETA IMAGEN */
 .profile-card{
-width:260px;
-height:420px;
+background:#1f4d2b;
 border-radius:20px;
-overflow:hidden;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:center;
 position:relative;
 }
 
-/* MARCO FUEGO AZUL */
+/* MARCO AZUL ANIMADO */
+
 .profile-card::before{
 content:"";
 position:absolute;
-top:-6px;
-left:-6px;
-right:-6px;
-bottom:-6px;
+top:-5px;
+left:-5px;
+right:-5px;
+bottom:-5px;
 border-radius:25px;
-background:linear-gradient(45deg,#00d4ff,#00aaff,#00ffff,#0077ff);
+background:linear-gradient(45deg,#00d4ff,#0077ff,#00ffff,#00d4ff);
 background-size:400% 400%;
-animation:fireBlue 3s linear infinite;
-z-index:-1;
+animation:fire 4s linear infinite;
 filter:blur(6px);
+z-index:-1;
 }
 
-/* ANIMACION FUEGO */
-@keyframes fireBlue{
+@keyframes fire{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
 /* IMAGEN COMPLETA */
+
 .profile-card img{
-width:100%;
-height:100%;
-object-fit:contain;   /* CAMBIO IMPORTANTE */
-background:#1f4d2b;
+width:220px;
+height:auto;
+border-radius:12px;
 }
 
-/* DERECHA */
+/* TEXTO */
+
 .profile-right{
 width:60%;
-padding-left:60px;
 color:#000;
 text-align:left;
 }
 
-/* TEXTOS */
 .profile-small{
 font-family:'Playfair Display';
 font-size:40px;
@@ -154,6 +157,7 @@ max-width:500px;
 }
 
 /* SECCIONES */
+
 section{
 padding:100px 20px;
 width:100%;
@@ -174,11 +178,30 @@ margin-top:10px;
 }
 
 /* ACORDEON */
+
 .accordion{margin-top:10px;cursor:pointer;}
-.accordion-header{padding:15px;background:#111;border-radius:10px;}
-.accordion.active .accordion-header{background:#00d4ff;color:#000;}
-.accordion-content{max-height:0;overflow:hidden;transition:0.5s;}
-.accordion.active .accordion-content{max-height:1200px;margin-top:10px;}
+
+.accordion-header{
+padding:15px;
+background:#111;
+border-radius:10px;
+}
+
+.accordion.active .accordion-header{
+background:#00d4ff;
+color:#000;
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:0.5s;
+}
+
+.accordion.active .accordion-content{
+max-height:1200px;
+margin-top:10px;
+}
 
 .glass{
 background:rgba(255,255,255,0.05);
@@ -192,7 +215,8 @@ margin-top:15px;
 border-radius:10px;
 }
 
-/* CARRUSEL */
+/* PORTAFOLIO */
+
 .carousel{
 overflow:hidden;
 margin-top:40px;
@@ -222,6 +246,7 @@ object-fit:cover;
 }
 
 /* REDES */
+
 .social-section{
 text-align:center;
 }
@@ -253,6 +278,7 @@ box-shadow:0 0 20px #00d4ff;
 }
 
 /* WHATSAPP */
+
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -266,8 +292,46 @@ box-shadow:0 0 15px #25D366;
 }
 
 /* ANIMACION */
-.fade{opacity:0;transform:translateY(60px);transition:1s;}
-.fade.show{opacity:1;transform:translateY(0);}
+
+.fade{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.profile-wrapper{
+flex-direction:column;
+text-align:center;
+}
+
+.profile-left{
+width:100%;
+}
+
+.profile-right{
+width:100%;
+text-align:center;
+}
+
+.profile-big{
+font-size:50px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+}
 
 </style>
 </head>
@@ -310,72 +374,130 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </section>
 
 <!-- HISTORIA -->
+
 <section id="historia" class="fade">
 <h2>HISTORIA DEL DISEÑO</h2>
+
 <div class="accordion">
 <div class="accordion-header">Ver historia completa</div>
+
 <div class="accordion-content">
 <div class="glass">
-<p>El diseño ha evolucionado desde las primeras civilizaciones hasta convertirse en una disciplina clave en el mundo moderno. Desde los jeroglíficos egipcios hasta el diseño digital actual, siempre ha sido una herramienta de comunicación visual.</p>
+
+<p>
+El diseño ha evolucionado desde las primeras civilizaciones hasta convertirse en una disciplina clave en el mundo moderno.
+</p>
+
 <img class="extra-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0">
+
 </div>
 </div>
 </div>
+
 </section>
 
 <!-- TIPOS -->
+
 <section id="tipos" class="fade">
+
 <h2>TIPOS DE DISEÑO</h2>
+
 <div class="accordion">
+
 <div class="accordion-header">Explorar tipos</div>
+
 <div class="accordion-content">
+
 <div class="glass">
-<p>El diseño gráfico, web, UX/UI e industrial son fundamentales en la actualidad. Cada uno cumple funciones específicas dentro del mundo creativo.</p>
+
+<p>
+El diseño gráfico, web, UX/UI e industrial son fundamentales en la actualidad.
+</p>
+
 <img class="extra-img" src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
+
 </div>
 </div>
 </div>
+
 </section>
 
 <!-- FRASES -->
+
 <section id="frases" class="fade">
+
 <h2>FRASES DEL DISEÑO</h2>
+
 <div class="accordion">
+
 <div class="accordion-header">Ver frases</div>
+
 <div class="accordion-content">
+
 <div class="glass">
-<p>“El diseño no es solo lo que se ve, sino cómo funciona.” — Steve Jobs</p>
+
+<p>
+“El diseño no es solo lo que se ve, sino cómo funciona.” — Steve Jobs
+</p>
+
 <img class="extra-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+
 </div>
 </div>
 </div>
+
 </section>
 
 <!-- PORTAFOLIO -->
+
 <section id="trabajos" class="fade">
+
 <h2>PORTAFOLIO</h2>
+
 <div class="carousel">
+
 <div class="carousel-track">
-<img src="img3.jpg"><img src="img4.jpg"><img src="img5.jpg"><img src="img6.jpg">
-<img src="img7.jpg"><img src="img8.jpg"><img src="img9.jpg"><img src="img10.jpg">
-<img src="img3.jpg"><img src="img4.jpg"><img src="img5.jpg"><img src="img6.jpg">
-<img src="img7.jpg"><img src="img8.jpg"><img src="img9.jpg"><img src="img10.jpg">
+
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+
+<img src="img7.jpg">
+<img src="img8.jpg">
+<img src="img9.jpg">
+<img src="img10.jpg">
+
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+
 </div>
 </div>
+
 </section>
 
 <!-- REDES -->
+
 <section class="social-section fade">
+
 <h2>REDES SOCIALES</h2>
+
 <div class="social-container">
 
 <a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+
 <a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+
 <a href="https://www.instagram.com/estibenportilla" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+
 <a href="https://youtube.com/@jepvizion" target="_blank" class="social-btn"><i class="fab fa-youtube"></i></a>
+
 <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
 
 </div>
+
 </section>
 
 </div>
