@@ -332,7 +332,48 @@ gap:10px;
 }
 
 }
+/* HERRAMIENTAS */
 
+.tools-carousel{
+overflow:hidden;
+width:100%;
+margin-top:40px;
+position:relative;
+}
+
+.tools-track{
+display:flex;
+gap:40px;
+width:max-content;
+animation:scrollTools 30s linear infinite;
+}
+
+.tools-carousel:hover .tools-track{
+animation-play-state:paused;
+}
+
+.tools-item{
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 15px rgba(0,0,0,0.6);
+flex-shrink:0;
+}
+
+.tools-item img{
+width:45px;
+height:45px;
+object-fit:contain;
+}
+
+@keyframes scrollTools{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
 </style>
 </head>
 
@@ -383,11 +424,17 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="tools-carousel">
 <div class="tools-track">
 
-<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"><span>DALL·E</span></div>
-<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Stability_AI_logo.svg"><span>Stable Diffusion</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/canva"><span>Canva</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/framer"><span>Framer</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/figma"><span>Figma</span></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Stability_AI_logo.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Webflow_logo_2023.svg"></div>
+
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Stability_AI_logo.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Webflow_logo_2023.svg"></div>
 
 </div>
 </div>
@@ -397,11 +444,17 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="tools-carousel">
 <div class="tools-track">
 
-<div class="tools-item"><img src="https://cdn.simpleicons.org/adobephotoshop"><span>Photoshop</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/adobeillustrator"><span>Illustrator</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/figma"><span>Figma</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/sketch"><span>Sketch</span></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/gimp"><span>GIMP</span></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Sketch_logo_frame.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/GIMP_icon.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg"></div>
+
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Sketch_logo_frame.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/GIMP_icon.svg"></div>
+<div class="tools-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg"></div>
 
 </div>
 </div>
