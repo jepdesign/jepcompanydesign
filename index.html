@@ -23,7 +23,8 @@ align-items:center;
 width:100%;
 max-width:1200px;
 }
-/* NAV */
+
+/* NAV CON HAMBURGUESA */
 nav{
 position:fixed;
 width:100%;
@@ -31,16 +32,74 @@ max-width:1200px;
 padding:15px 40px;
 display:flex;
 justify-content:space-between;
+align-items:center;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
-nav a{
+
+nav h2{
+font-family:'Bebas Neue';
+font-size:28px;
 color:#fff;
-margin-left:15px;
-text-decoration:none;
 }
-/* HERO */
+
+.hamburger {
+    cursor: pointer;
+    font-size: 34px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.hamburger:hover {
+    color: #00d4ff;
+    transform: scale(1.1);
+}
+
+/* MENÚ DESPLEGABLE */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 30px;
+    background: #001f5b;
+    border-radius: 16px;
+    width: 260px;
+    padding: 10px 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    border: 1px solid rgba(0,212,255,0.3);
+    overflow: hidden;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.menu-item {
+    display: block;
+    padding: 16px 25px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background: rgba(0, 212, 255, 0.15);
+}
+
+.menu-item.active {
+    background: #00d4ff;
+    color: #001b3a;
+    font-weight: 700;
+}
+
+/* ==================== TUS ESTILOS ORIGINALES ==================== */
 .hero{
 min-height:100vh;
 display:flex;
@@ -56,7 +115,6 @@ background:linear-gradient(90deg,#fff,#00d4ff);
 -webkit-background-clip:text;
 color:transparent;
 }
-/* PERFIL */
 .profile-wrapper{
 width:100%;
 background:#efe1cc;
@@ -126,7 +184,6 @@ color:#333;
 margin-top:15px;
 max-width:500px;
 }
-/* PORTAFOLIO */
 .portfolio-hero{
 margin-top:50px;
 width:100%;
@@ -168,7 +225,6 @@ object-fit:cover;
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
 }
-/* SECCIONES */
 section{
 padding:100px 20px;
 width:100%;
@@ -185,7 +241,6 @@ background:#00d4ff;
 display:block;
 margin-top:10px;
 }
-/* ACORDEONES */
 .accordion{margin-top:10px;cursor:pointer;}
 .accordion-header{
 padding:15px;
@@ -210,7 +265,6 @@ background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:15px;
 }
-/* HERRAMIENTAS */
 .tools-carousel{
 overflow:hidden;
 width:100%;
@@ -246,7 +300,6 @@ object-fit:contain;
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
 }
-/* SUBACORDEONES */
 .subaccordion{
 background:#1a3b78;
 cursor:pointer;
@@ -272,7 +325,6 @@ background:#0f2a57;
 border-radius:6px;
 line-height:1.6;
 }
-/* ANIMACION FADE */
 .fade{
 opacity:0;
 transform:translateY(60px);
@@ -282,7 +334,6 @@ transition:1s;
 opacity:1;
 transform:translateY(0);
 }
-/* REDES SOCIALES */
 .social-section{
 text-align:center;
 }
@@ -318,7 +369,6 @@ opacity:0.6;
 border-radius:24px;
 z-index:1;
 }
-/* Glow por red */
 .social-btn.facebook{
 background: #1877F2;
 box-shadow: 0 10px 25px rgba(24, 119, 242, 0.6),
@@ -366,8 +416,6 @@ transition:transform 0.4s;
 .social-btn:hover i{
 transform: scale(1.15);
 }
-
-/* ==================== WHATSAPP MODIFICADO (sin robot, logo arriba, fondo transparente) ==================== */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -380,11 +428,9 @@ transform: scale(1.15);
     text-decoration: none;
     transition: all 0.4s ease;
 }
-
 .whatsapp-float:hover {
     transform: translateY(-6px);
 }
-
 .whatsapp-btn {
     width: 68px;
     height: 68px;
@@ -398,12 +444,10 @@ transform: scale(1.15);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.65);
     transition: all 0.3s ease;
 }
-
 .whatsapp-btn:hover {
     transform: scale(1.15) rotate(12deg);
     box-shadow: 0 0 40px #25D366;
 }
-
 .whatsapp-text {
     color: white;
     font-family: 'Bebas Neue', sans-serif;
@@ -413,7 +457,6 @@ transform: scale(1.15);
     text-shadow: 0 0 10px rgba(255,255,255,0.9);
     white-space: nowrap;
 }
-
 /* RESPONSIVE */
 @media(max-width:768px){
     .profile-wrapper{
@@ -423,7 +466,8 @@ transform: scale(1.15);
     .profile-left{ width:100%; }
     .profile-right{ width:100%; text-align:center; }
     .profile-big{ font-size:50px; }
-    nav{ flex-direction:column; gap:10px; }
+    .hamburger { font-size: 30px; }
+    .mobile-menu { right: 20px; width: 240px; }
     .carousel-track img{
         width:160px;
         height:200px;
@@ -447,15 +491,20 @@ transform: scale(1.15);
 <body>
 <div class="main">
 <nav>
-<h2>JEP DESIGN</h2>
-<div>
-<a href="#inicio">Inicio</a>
-<a href="#historia">Historia</a>
-<a href="#tipos">Tipos</a>
-<a href="#frases">Frases</a>
-<a href="#trabajos">Portafolio</a>
-</div>
+    <h2>JEP DESIGN</h2>
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
 </nav>
+
+<!-- MENÚ HAMBURGUESA CORREGIDO -->
+<div class="mobile-menu" id="mobile-menu">
+    <a href="#inicio" class="menu-item">Inicio</a>
+    <a href="#historia" class="menu-item">Historia</a>
+    <a href="#tipos" class="menu-item">Tipos</a>
+    <a href="#frases" class="menu-item">Frases</a>
+    <a href="#trabajos" class="menu-item">Portafolio</a>
+</div>
 
 <section class="hero fade" id="inicio">
 <h1>JEP DESIGN</h1>
@@ -474,8 +523,8 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 
-<!-- PORTAFOLIO -->
-<div class="portfolio-hero">
+<!-- PORTAFOLIO (ahora con id correcto) -->
+<div id="trabajos" class="portfolio-hero">
 <h2>PORTAFOLIO</h2>
 <div class="carousel">
 <div class="carousel-track">
@@ -556,7 +605,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 </div>
-
 <div class="accordion">
 <div class="accordion-header">Revolución Industrial</div>
 <div class="accordion-content">
@@ -579,7 +627,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 </div>
-
 <div class="accordion">
 <div class="accordion-header">Movimiento Bauhaus</div>
 <div class="accordion-content">
@@ -604,7 +651,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- TIPOS DE DISEÑO (completo) -->
+<!-- TIPOS DE DISEÑO -->
 <section id="tipos" class="fade">
 <h2>TIPOS DE DISEÑO</h2>
 <div class="accordion">
@@ -651,7 +698,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- FRASES DEL DISEÑO (completo) -->
+<!-- FRASES DEL DISEÑO -->
 <section id="frases" class="fade">
 <h2>FRASES DEL DISEÑO</h2>
 <div class="accordion">
@@ -716,7 +763,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </section>
 </div>
 
-<!-- WHATSAPP MODIFICADO -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" class="whatsapp-float">
     <div class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i>
@@ -725,14 +772,39 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </a>
 
 <script>
-// Acordeones principales
+// MENÚ HAMBURGUESA
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuItems = document.querySelectorAll('.menu-item');
+
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    if (mobileMenu.classList.contains('active')) {
+        hamburger.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        
+        setTimeout(() => {
+            mobileMenu.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        }, 300);
+    });
+});
+
+// TUS SCRIPTS ORIGINALES
 document.querySelectorAll(".accordion").forEach(a=>{
     a.querySelector(".accordion-header").addEventListener("click", ()=>{
         a.classList.toggle("active");
     });
 });
 
-// Sub-acordeones
 document.querySelectorAll(".subaccordion").forEach(btn=>{
     btn.addEventListener("click", function(){
         this.classList.toggle("active");
@@ -745,7 +817,6 @@ document.querySelectorAll(".subaccordion").forEach(btn=>{
     });
 });
 
-// Animación fade
 const elements = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
