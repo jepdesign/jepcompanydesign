@@ -67,7 +67,6 @@ margin-top:30px;
 gap:40px;
 align-items:center;
 }
-/* FOTO */
 .profile-left{
 width:40%;
 display:flex;
@@ -82,7 +81,6 @@ align-items:center;
 justify-content:center;
 position:relative;
 }
-/* MARCO AZUL ANIMADO */
 .profile-card::before{
 content:"";
 position:absolute;
@@ -102,13 +100,11 @@ z-index:-1;
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
-/* IMAGEN COMPLETA */
 .profile-card img{
 width:220px;
 height:auto;
 border-radius:12px;
 }
-/* TEXTO */
 .profile-right{
 width:60%;
 color:#000;
@@ -130,7 +126,7 @@ color:#333;
 margin-top:15px;
 max-width:500px;
 }
-/* PORTAFOLIO DENTRO DEL HERO */
+/* PORTAFOLIO */
 .portfolio-hero{
 margin-top:50px;
 width:100%;
@@ -149,7 +145,6 @@ background:#00d4ff;
 display:block;
 margin:10px auto;
 }
-/* PORTAFOLIO */
 .carousel{
 overflow:hidden;
 margin-top:20px;
@@ -287,7 +282,7 @@ transition:1s;
 opacity:1;
 transform:translateY(0);
 }
-/* REDES SOCIALES - 3D + GLOW */
+/* REDES SOCIALES */
 .social-section{
 text-align:center;
 }
@@ -372,82 +367,51 @@ transition:transform 0.4s;
 transform: scale(1.15);
 }
 
-/* ==================== WHATSAPP CON ROBOT BONITO ==================== */
+/* ==================== WHATSAPP MODIFICADO (sin robot, logo arriba, fondo transparente) ==================== */
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 30px;
+    right: 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 12px 22px;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    gap: 8px;
     z-index: 9999;
-    transition: all 0.4s ease;
     text-decoration: none;
-    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
 }
 
 .whatsapp-float:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    transform: translateY(-6px);
 }
 
 .whatsapp-btn {
-    width: 58px;
-    height: 58px;
+    width: 68px;
+    height: 68px;
     background: #25D366;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 36px;
     color: white;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.7);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.65);
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .whatsapp-btn:hover {
-    transform: scale(1.12) rotate(10deg);
-    box-shadow: 0 0 35px #25D366;
+    transform: scale(1.15) rotate(12deg);
+    box-shadow: 0 0 40px #25D366;
 }
 
 .whatsapp-text {
     color: white;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 23px;
+    font-size: 17px;
     font-weight: 700;
-    letter-spacing: 1.2px;
-    text-shadow: 
-        0 0 10px rgba(255,255,255,0.95),
-        0 0 20px rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.9);
     white-space: nowrap;
-}
-
-/* Robot bonito */
-.robot-container {
-    position: absolute;
-    top: -55px;
-    right: 48px;
-    width: 78px;
-    height: 78px;
-    animation: robotFloat 3.2s ease-in-out infinite;
-    z-index: 10;
-}
-
-.robot {
-    width: 100%;
-    height: 100%;
-    background: url('https://i.imgur.com/8vL9p0K.png') no-repeat center/contain;
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.6));
-}
-
-@keyframes robotFloat {
-    0%, 100% { transform: translateY(0) rotate(-6deg); }
-    50% { transform: translateY(-15px) rotate(6deg); }
 }
 
 /* RESPONSIVE */
@@ -469,25 +433,13 @@ transform: scale(1.15);
         height:80px;
         font-size:36px;
     }
-    .whatsapp-float {
-        padding: 10px 18px;
-        gap: 10px;
-        bottom: 20px;
-        right: 20px;
-    }
     .whatsapp-btn {
-        width: 52px;
-        height: 52px;
-        font-size: 28px;
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
     }
     .whatsapp-text {
-        font-size: 20px;
-    }
-    .robot-container {
-        width: 65px;
-        height: 65px;
-        top: -46px;
-        right: 40px;
+        font-size: 15px;
     }
 }
 </style>
@@ -521,6 +473,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 </div>
+
 <!-- PORTAFOLIO -->
 <div class="portfolio-hero">
 <h2>PORTAFOLIO</h2>
@@ -585,18 +538,9 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="accordion-header">Origen del diseño</div>
 <div class="accordion-content">
 <div class="glass">
-<p>
-El diseño existe desde que las primeras civilizaciones comenzaron a crear objetos con una intención estética además de funcional.
-En el antiguo Egipto, Grecia y Roma los artesanos ya utilizaban principios visuales como la proporción, el equilibrio y la simetría.
-</p>
-<p>
-Los jeroglíficos egipcios son considerados uno de los primeros sistemas de comunicación visual estructurados.
-Estos símbolos no solo transmitían información sino que también seguían patrones visuales organizados.
-</p>
-<p>
-Dato curioso: muchos principios utilizados hoy en diseño gráfico, como la regla de los tercios o la simetría visual,
-ya se aplicaban en arquitectura hace más de 3000 años.
-</p>
+<p>El diseño existe desde que las primeras civilizaciones comenzaron a crear objetos con una intención estética además de funcional. En el antiguo Egipto, Grecia y Roma los artesanos ya utilizaban principios visuales como la proporción, el equilibrio y la simetría.</p>
+<p>Los jeroglíficos egipcios son considerados uno de los primeros sistemas de comunicación visual estructurados. Estos símbolos no solo transmitían información sino que también seguían patrones visuales organizados.</p>
+<p>Dato curioso: muchos principios utilizados hoy en diseño gráfico, como la regla de los tercios o la simetría visual, ya se aplicaban en arquitectura hace más de 3000 años.</p>
 <div class="carousel">
 <div class="carousel-track">
 <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=400&q=60">
@@ -617,19 +561,9 @@ ya se aplicaban en arquitectura hace más de 3000 años.
 <div class="accordion-header">Revolución Industrial</div>
 <div class="accordion-content">
 <div class="glass">
-<p>
-Durante los siglos XVIII y XIX la Revolución Industrial transformó completamente la forma en que se producían los objetos.
-Las fábricas comenzaron a fabricar productos en masa y esto generó un nuevo problema: cómo hacer que estos productos
-no solo fueran funcionales sino también atractivos para los consumidores.
-</p>
-<p>
-Este periodo marcó el nacimiento del diseño industrial. Los diseñadores comenzaron a trabajar junto a ingenieros y
-fabricantes para mejorar tanto la estética como la eficiencia de los productos.
-</p>
-<p>
-Dato curioso: muchas de las primeras empresas que aplicaron principios de diseño a sus productos lograron vender mucho
-más que sus competidores, demostrando que la estética influye en las decisiones de compra.
-</p>
+<p>Durante los siglos XVIII y XIX la Revolución Industrial transformó completamente la forma en que se producían los objetos. Las fábricas comenzaron a fabricar productos en masa y esto generó un nuevo problema: cómo hacer que estos productos no solo fueran funcionales sino también atractivos para los consumidores.</p>
+<p>Este periodo marcó el nacimiento del diseño industrial. Los diseñadores comenzaron a trabajar junto a ingenieros y fabricantes para mejorar tanto la estética como la eficiencia de los productos.</p>
+<p>Dato curioso: muchas de las primeras empresas que aplicaron principios de diseño a sus productos lograron vender mucho más que sus competidores, demostrando que la estética influye en las decisiones de compra.</p>
 <div class="carousel">
 <div class="carousel-track">
 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=60">
@@ -650,18 +584,9 @@ más que sus competidores, demostrando que la estética influye en las decisione
 <div class="accordion-header">Movimiento Bauhaus</div>
 <div class="accordion-content">
 <div class="glass">
-<p>
-En 1919 el arquitecto Walter Gropius fundó la escuela Bauhaus en Alemania.
-Esta institución revolucionó la forma en que se enseñaba el arte y el diseño.
-</p>
-<p>
-La Bauhaus promovía la idea de que el diseño debía unir arte, tecnología y funcionalidad.
-Su famoso principio "la forma sigue a la función" influyó profundamente en el diseño moderno.
-</p>
-<p>
-Muchos de los muebles y objetos creados bajo la filosofía Bauhaus siguen produciéndose hoy
-porque su diseño simple y funcional sigue siendo relevante.
-</p>
+<p>En 1919 el arquitecto Walter Gropius fundó la escuela Bauhaus en Alemania. Esta institución revolucionó la forma en que se enseñaba el arte y el diseño.</p>
+<p>La Bauhaus promovía la idea de que el diseño debía unir arte, tecnología y funcionalidad. Su famoso principio "la forma sigue a la función" influyó profundamente en el diseño moderno.</p>
+<p>Muchos de los muebles y objetos creados bajo la filosofía Bauhaus siguen produciéndose hoy porque su diseño simple y funcional sigue siendo relevante.</p>
 <div class="carousel">
 <div class="carousel-track">
 <img src="https://images.unsplash.com/photo-1616627988067-1f3cfc4b1a73?auto=format&fit=crop&w=400&q=60">
@@ -679,7 +604,7 @@ porque su diseño simple y funcional sigue siendo relevante.
 </div>
 </section>
 
-<!-- TIPOS -->
+<!-- TIPOS DE DISEÑO (completo) -->
 <section id="tipos" class="fade">
 <h2>TIPOS DE DISEÑO</h2>
 <div class="accordion">
@@ -690,63 +615,43 @@ porque su diseño simple y funcional sigue siendo relevante.
 <div class="subpanel">
 <button class="subaccordion">1. Logos y Branding</button>
 <div class="subpanel">
-<p>
-El logo es el símbolo o imagen que representa a una marca, mientras que el branding es todo el estilo visual que la hace reconocible (colores, tipografía, estilo de imágenes, etc.).
-</p>
-<p>
-🔹 Ejemplo: El logo de Nike con su “swoosh” o el de Apple con la manzana. Cuando ves esos símbolos, inmediatamente sabes qué marca es.
-</p>
-<p>
-👉 El objetivo es que la marca sea fácil de recordar y transmitir una identidad clara.
-</p>
+<p>El logo es el símbolo o imagen que representa a una marca, mientras que el branding es todo el estilo visual que la hace reconocible (colores, tipografía, estilo de imágenes, etc.).</p>
+<p>🔹 Ejemplo: El logo de Nike con su “swoosh” o el de Apple con la manzana. Cuando ves esos símbolos, inmediatamente sabes qué marca es.</p>
+<p>👉 El objetivo es que la marca sea fácil de recordar y transmitir una identidad clara.</p>
 </div>
 <button class="subaccordion">2. Publicidad</button>
 <div class="subpanel">
-<p>
-El diseño gráfico se usa para crear anuncios visuales que llamen la atención y motiven a comprar o conocer un producto. Se combinan imágenes, textos llamativos y colores estratégicos.
-</p>
-<p>
-🔹 Ejemplo: Un anuncio de una hamburguesa de McDonald's en una valla publicitaria o un banner digital promocionando un nuevo celular.
-</p>
-<p>
-👉 Su función es persuadir y atraer clientes rápidamente.
-</p>
+<p>El diseño gráfico se usa para crear anuncios visuales que llamen la atención y motiven a comprar o conocer un producto. Se combinan imágenes, textos llamativos y colores estratégicos.</p>
+<p>🔹 Ejemplo: Un anuncio de una hamburguesa de McDonald's en una valla publicitaria o un banner digital promocionando un nuevo celular.</p>
+<p>👉 Su función es persuadir y atraer clientes rápidamente.</p>
 </div>
 <button class="subaccordion">3. Redes Sociales</button>
 <div class="subpanel">
-<p>
-Las marcas y creadores usan diseño gráfico para hacer publicaciones visualmente atractivas que destaquen entre miles de posts.
-</p>
+<p>Las marcas y creadores usan diseño gráfico para hacer publicaciones visualmente atractivas que destaquen entre miles de posts.</p>
 <p>🔹 Ejemplo:</p>
 <ul>
 <li>Un post de Instagram anunciando descuentos.</li>
 <li>Historias con diseño para promocionar un evento.</li>
 <li>Portadas para videos de YouTube.</li>
 </ul>
-<p>
-👉 Aquí el diseño debe ser rápido de entender, llamativo y adaptado a formatos digitales.
-</p>
+<p>👉 Aquí el diseño debe ser rápido de entender, llamativo y adaptado a formatos digitales.</p>
 </div>
 <button class="subaccordion">4. Carteles y Revistas</button>
 <div class="subpanel">
-<p>
-El diseño gráfico organiza imágenes y textos para informar o promocionar algo de forma clara y estética en medios impresos o digitales.
-</p>
+<p>El diseño gráfico organiza imágenes y textos para informar o promocionar algo de forma clara y estética en medios impresos o digitales.</p>
 <p>🔹 Ejemplo:</p>
 <ul>
 <li>Un cartel anunciando un concierto o festival.</li>
 <li>La portada de una revista de moda como Vogue.</li>
 </ul>
-<p>
-👉 El objetivo es captar la atención y guiar al lector a través de la información de forma visualmente atractiva.
-</p>
+<p>👉 El objetivo es captar la atención y guiar al lector a través de la información de forma visualmente atractiva.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- FRASES -->
+<!-- FRASES DEL DISEÑO (completo) -->
 <section id="frases" class="fade">
 <h2>FRASES DEL DISEÑO</h2>
 <div class="accordion">
@@ -811,11 +716,8 @@ El diseño gráfico organiza imágenes y textos para informar o promocionar algo
 </section>
 </div>
 
-<!-- WHATSAPP CON ROBOT BONITO -->
+<!-- WHATSAPP MODIFICADO -->
 <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" class="whatsapp-float">
-    <div class="robot-container">
-        <div class="robot"></div>
-    </div>
     <div class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i>
     </div>
