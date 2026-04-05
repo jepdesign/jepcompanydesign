@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JEP DESIGN</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-
 body{
 font-family:'Montserrat',sans-serif;
 background:radial-gradient(circle at top,#001f5b,#000);
@@ -22,13 +18,11 @@ display:flex;
 flex-direction:column;
 align-items:center;
 }
-
 /* CONTENEDOR */
 .main{
 width:100%;
 max-width:1200px;
 }
-
 /* NAV */
 nav{
 position:fixed;
@@ -41,15 +35,12 @@ background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
-
 nav a{
 color:#fff;
 margin-left:15px;
 text-decoration:none;
 }
-
 /* HERO */
-
 .hero{
 min-height:100vh;
 display:flex;
@@ -58,7 +49,6 @@ align-items:center;
 text-align:center;
 padding-top:120px;
 }
-
 .hero h1{
 font-family:'Bebas Neue';
 font-size:80px;
@@ -66,9 +56,7 @@ background:linear-gradient(90deg,#fff,#00d4ff);
 -webkit-background-clip:text;
 color:transparent;
 }
-
 /* PERFIL */
-
 .profile-wrapper{
 width:100%;
 background:#efe1cc;
@@ -79,15 +67,12 @@ margin-top:30px;
 gap:40px;
 align-items:center;
 }
-
 /* FOTO */
-
 .profile-left{
 width:40%;
 display:flex;
 justify-content:center;
 }
-
 .profile-card{
 background:#1f4d2b;
 border-radius:20px;
@@ -97,9 +82,7 @@ align-items:center;
 justify-content:center;
 position:relative;
 }
-
 /* MARCO AZUL ANIMADO */
-
 .profile-card::before{
 content:"";
 position:absolute;
@@ -114,40 +97,32 @@ animation:fire 4s linear infinite;
 filter:blur(6px);
 z-index:-1;
 }
-
 @keyframes fire{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
-
 /* IMAGEN COMPLETA */
-
 .profile-card img{
 width:220px;
 height:auto;
 border-radius:12px;
 }
-
 /* TEXTO */
-
 .profile-right{
 width:60%;
 color:#000;
 text-align:left;
 }
-
 .profile-small{
 font-family:'Playfair Display';
 font-size:40px;
 }
-
 .profile-big{
 font-family:'Playfair Display';
 font-size:70px;
 font-weight:700;
 }
-
 .profile-text{
 font-size:15px;
 line-height:1.8;
@@ -155,19 +130,15 @@ color:#333;
 margin-top:15px;
 max-width:500px;
 }
-
 /* SECCIONES */
-
 section{
 padding:100px 20px;
 width:100%;
 }
-
 h2{
 font-size:40px;
 margin-bottom:20px;
 }
-
 h2::after{
 content:"";
 width:60px;
@@ -176,62 +147,49 @@ background:#00d4ff;
 display:block;
 margin-top:10px;
 }
-
 /* ACORDEON */
-
 .accordion{margin-top:10px;cursor:pointer;}
-
 .accordion-header{
 padding:15px;
 background:#111;
 border-radius:10px;
 }
-
 .accordion.active .accordion-header{
 background:#00d4ff;
 color:#000;
 }
-
 .accordion-content{
 max-height:0;
 overflow:hidden;
 transition:0.5s;
 }
-
 .accordion.active .accordion-content{
 max-height:1200px;
 margin-top:10px;
 }
-
 .glass{
 background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:15px;
 }
-
 .extra-img{
 width:100%;
 margin-top:15px;
 border-radius:10px;
 }
-
 /* PORTAFOLIO */
-
 .carousel{
 overflow:hidden;
 margin-top:40px;
 }
-
 .carousel-track{
 display:flex;
 width:max-content;
 animation:scroll 30s linear infinite;
 }
-
 .carousel:hover .carousel-track{
 animation-play-state:paused;
 }
-
 .carousel-track img{
 width:200px;
 height:250px;
@@ -239,18 +197,14 @@ margin:10px;
 border-radius:20px;
 object-fit:cover;
 }
-
 @keyframes scroll{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
 }
-
 /* REDES */
-
 .social-section{
 text-align:center;
 }
-
 .social-container{
 display:flex;
 justify-content:center;
@@ -258,7 +212,6 @@ flex-wrap:wrap;
 gap:25px;
 margin-top:30px;
 }
-
 .social-btn{
 width:70px;
 height:70px;
@@ -271,14 +224,11 @@ font-size:28px;
 color:#fff;
 transition:.3s;
 }
-
 .social-btn:hover{
 transform:translateY(-10px) scale(1.1);
 box-shadow:0 0 20px #00d4ff;
 }
-
 /* WHATSAPP */
-
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -290,68 +240,53 @@ color:#fff;
 text-decoration:none;
 box-shadow:0 0 15px #25D366;
 }
-
 /* ANIMACION */
-
 .fade{
 opacity:0;
 transform:translateY(60px);
 transition:1s;
 }
-
 .fade.show{
 opacity:1;
 transform:translateY(0);
 }
-
 /* RESPONSIVE */
-
 @media(max-width:768px){
-
 .profile-wrapper{
 flex-direction:column;
 text-align:center;
 }
-
 .profile-left{
 width:100%;
 }
-
 .profile-right{
 width:100%;
 text-align:center;
 }
-
 .profile-big{
 font-size:50px;
 }
-
 nav{
 flex-direction:column;
 gap:10px;
 }
-
 }
 /* HERRAMIENTAS */
-
 .tools-carousel{
 overflow:hidden;
 width:100%;
 margin-top:40px;
 position:relative;
 }
-
 .tools-track{
 display:flex;
 gap:40px;
 width:max-content;
 animation:scrollTools 30s linear infinite;
 }
-
 .tools-carousel:hover .tools-track{
 animation-play-state:paused;
 }
-
 .tools-item{
 width:90px;
 height:90px;
@@ -363,13 +298,11 @@ justify-content:center;
 box-shadow:0 0 15px rgba(0,0,0,0.6);
 flex-shrink:0;
 }
-
 .tools-item img{
 width:45px;
 height:45px;
 object-fit:contain;
 }
-
 @keyframes scrollTools{
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
@@ -387,31 +320,10 @@ margin-top:10px;
 border-radius:6px;
 transition:0.3s;
 }
-
 .subaccordion.active{
 background:#5fb0ff;
 color:#001b3a;
 }
-
-.subaccordion{
-background:#1a3b78;
-cursor:pointer;
-padding:14px;
-width:100%;
-border:none;
-text-align:left;
-font-size:18px;
-color:white;
-margin-top:10px;
-border-radius:6px;
-transition:0.3s;
-}
-
-.subaccordion.active{
-background:#5fb0ff;
-color:#001b3a;
-}
-
 .subpanel{
 display:none;
 padding:15px;
@@ -422,11 +334,8 @@ line-height:1.6;
 }
 </style>
 </head>
-
 <body>
-
 <div class="main">
-
 <nav>
 <h2>JEP DESIGN</h2>
 <div>
@@ -440,15 +349,12 @@ line-height:1.6;
 
 <section class="hero fade" id="inicio">
 <h1>JEP DESIGN</h1>
-
 <div class="profile-wrapper">
-
 <div class="profile-left">
 <div class="profile-card">
 <img src="img1.jpg" alt="Tu imagen">
 </div>
 </div>
-
 <div class="profile-right">
 <div class="profile-small">Hola 🙋!</div>
 <div class="profile-big">Soy Estiben</div>
@@ -456,490 +362,335 @@ line-height:1.6;
 Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de herramientas digitales y pensamiento visual. Me especializo en crear piezas modernas, atractivas y funcionales que conectan con el público.
 </div>
 </div>
-
 </div>
 </section>
+
 <!-- HERRAMIENTAS -->
-
 <section class="fade">
-
 <h2>HERRAMIENTAS DE DISEÑO</h2>
-
 <h3>🧠 Con IA</h3>
-
 <div class="tools-carousel">
 <div class="tools-track">
-
 <div class="tools-item"><img src="https://cdn.simpleicons.org/openai/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/stabilityai/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/canva/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/figma/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/webflow/ffffff"></div>
-
 <div class="tools-item"><img src="https://cdn.simpleicons.org/openai/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/stabilityai/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/canva/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/figma/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/webflow/ffffff"></div>
-
 </div>
 </div>
-
 <h3 style="margin-top:60px;">🧰 Convencionales</h3>
-
 <div class="tools-carousel">
 <div class="tools-track">
-
 <div class="tools-item"><img src="https://cdn.simpleicons.org/adobephotoshop/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/adobeillustrator/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/sketch/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/gimp/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/blender/ffffff"></div>
-
 <div class="tools-item"><img src="https://cdn.simpleicons.org/adobephotoshop/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/adobeillustrator/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/sketch/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/gimp/ffffff"></div>
 <div class="tools-item"><img src="https://cdn.simpleicons.org/blender/ffffff"></div>
-
 </div>
 </div>
 </section>
+
 <!-- HISTORIA -->
-
 <section id="historia" class="fade">
-
 <h2>HISTORIA DEL DISEÑO</h2>
-
 <!-- ACORDEON -->
-
 <div class="accordion">
-
 <div class="accordion-header">Origen del diseño</div>
-
 <div class="accordion-content">
-
 <div class="glass">
-
 <p>
-El diseño existe desde que las primeras civilizaciones comenzaron a crear objetos con una intención estética además de funcional. 
+El diseño existe desde que las primeras civilizaciones comenzaron a crear objetos con una intención estética además de funcional.
 En el antiguo Egipto, Grecia y Roma los artesanos ya utilizaban principios visuales como la proporción, el equilibrio y la simetría.
 </p>
-
 <p>
-Los jeroglíficos egipcios son considerados uno de los primeros sistemas de comunicación visual estructurados. 
+Los jeroglíficos egipcios son considerados uno de los primeros sistemas de comunicación visual estructurados.
 Estos símbolos no solo transmitían información sino que también seguían patrones visuales organizados.
 </p>
-
 <p>
-Dato curioso: muchos principios utilizados hoy en diseño gráfico, como la regla de los tercios o la simetría visual, 
+Dato curioso: muchos principios utilizados hoy en diseño gráfico, como la regla de los tercios o la simetría visual,
 ya se aplicaban en arquitectura hace más de 3000 años.
 </p>
-
 <div class="carousel">
 <div class="carousel-track">
-
 <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=400&q=60">
-
 <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=400&q=60">
-
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-
-<!-- REVOLUCION INDUSTRIAL -->
 
 <div class="accordion">
-
 <div class="accordion-header">Revolución Industrial</div>
-
 <div class="accordion-content">
-
 <div class="glass">
-
 <p>
-Durante los siglos XVIII y XIX la Revolución Industrial transformó completamente la forma en que se producían los objetos. 
-Las fábricas comenzaron a fabricar productos en masa y esto generó un nuevo problema: cómo hacer que estos productos 
+Durante los siglos XVIII y XIX la Revolución Industrial transformó completamente la forma en que se producían los objetos.
+Las fábricas comenzaron a fabricar productos en masa y esto generó un nuevo problema: cómo hacer que estos productos
 no solo fueran funcionales sino también atractivos para los consumidores.
 </p>
-
 <p>
-Este periodo marcó el nacimiento del diseño industrial. Los diseñadores comenzaron a trabajar junto a ingenieros y 
+Este periodo marcó el nacimiento del diseño industrial. Los diseñadores comenzaron a trabajar junto a ingenieros y
 fabricantes para mejorar tanto la estética como la eficiencia de los productos.
 </p>
-
 <p>
-Dato curioso: muchas de las primeras empresas que aplicaron principios de diseño a sus productos lograron vender mucho 
+Dato curioso: muchas de las primeras empresas que aplicaron principios de diseño a sus productos lograron vender mucho
 más que sus competidores, demostrando que la estética influye en las decisiones de compra.
 </p>
-
 <div class="carousel">
 <div class="carousel-track">
-
 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1581091870627-3c4a9f6e3c2c?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1545235617-7a424c1a60cc?auto=format&fit=crop&w=400&q=60">
-
 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1581091870627-3c4a9f6e3c2c?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1545235617-7a424c1a60cc?auto=format&fit=crop&w=400&q=60">
-
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-
-<!-- BAUHAUS -->
 
 <div class="accordion">
-
 <div class="accordion-header">Movimiento Bauhaus</div>
-
 <div class="accordion-content">
-
 <div class="glass">
-
 <p>
-En 1919 el arquitecto Walter Gropius fundó la escuela Bauhaus en Alemania. 
+En 1919 el arquitecto Walter Gropius fundó la escuela Bauhaus en Alemania.
 Esta institución revolucionó la forma en que se enseñaba el arte y el diseño.
 </p>
-
 <p>
-La Bauhaus promovía la idea de que el diseño debía unir arte, tecnología y funcionalidad. 
+La Bauhaus promovía la idea de que el diseño debía unir arte, tecnología y funcionalidad.
 Su famoso principio "la forma sigue a la función" influyó profundamente en el diseño moderno.
 </p>
-
 <p>
-Muchos de los muebles y objetos creados bajo la filosofía Bauhaus siguen produciéndose hoy 
+Muchos de los muebles y objetos creados bajo la filosofía Bauhaus siguen produciéndose hoy
 porque su diseño simple y funcional sigue siendo relevante.
 </p>
-
 <div class="carousel">
 <div class="carousel-track">
-
 <img src="https://images.unsplash.com/photo-1616627988067-1f3cfc4b1a73?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=400&q=60">
-
 <img src="https://images.unsplash.com/photo-1616627988067-1f3cfc4b1a73?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=60">
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=400&q=60">
-
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-
 </section>
 
 <!-- TIPOS -->
-
 <section id="tipos" class="fade">
-
 <h2>TIPOS DE DISEÑO</h2>
-
 <div class="accordion">
-
 <div class="accordion-header">Explorar tipos</div>
-
 <div class="accordion-content">
-
 <div class="glass">
-
 <!-- DISEÑO GRAFICO -->
-
 <button class="subaccordion">Diseño Gráfico</button>
-
 <div class="subpanel">
-
 <button class="subaccordion">1. Logos y Branding</button>
-
 <div class="subpanel">
-
 <p>
 El logo es el símbolo o imagen que representa a una marca, mientras que el branding es todo el estilo visual que la hace reconocible (colores, tipografía, estilo de imágenes, etc.).
 </p>
-
 <p>
 🔹 Ejemplo: El logo de Nike con su “swoosh” o el de Apple con la manzana. Cuando ves esos símbolos, inmediatamente sabes qué marca es.
 </p>
-
 <p>
 👉 El objetivo es que la marca sea fácil de recordar y transmitir una identidad clara.
 </p>
-
 </div>
-
 <button class="subaccordion">2. Publicidad</button>
-
 <div class="subpanel">
-
 <p>
 El diseño gráfico se usa para crear anuncios visuales que llamen la atención y motiven a comprar o conocer un producto. Se combinan imágenes, textos llamativos y colores estratégicos.
 </p>
-
 <p>
 🔹 Ejemplo: Un anuncio de una hamburguesa de McDonald's en una valla publicitaria o un banner digital promocionando un nuevo celular.
 </p>
-
 <p>
 👉 Su función es persuadir y atraer clientes rápidamente.
 </p>
-
 </div>
-
 <button class="subaccordion">3. Redes Sociales</button>
-
 <div class="subpanel">
-
 <p>
 Las marcas y creadores usan diseño gráfico para hacer publicaciones visualmente atractivas que destaquen entre miles de posts.
 </p>
-
 <p>🔹 Ejemplo:</p>
-
 <ul>
 <li>Un post de Instagram anunciando descuentos.</li>
 <li>Historias con diseño para promocionar un evento.</li>
 <li>Portadas para videos de YouTube.</li>
 </ul>
-
 <p>
 👉 Aquí el diseño debe ser rápido de entender, llamativo y adaptado a formatos digitales.
 </p>
-
 </div>
-
 <button class="subaccordion">4. Carteles y Revistas</button>
-
 <div class="subpanel">
-
 <p>
 El diseño gráfico organiza imágenes y textos para informar o promocionar algo de forma clara y estética en medios impresos o digitales.
 </p>
-
 <p>🔹 Ejemplo:</p>
-
 <ul>
 <li>Un cartel anunciando un concierto o festival.</li>
 <li>La portada de una revista de moda como Vogue.</li>
 </ul>
-
 <p>
 👉 El objetivo es captar la atención y guiar al lector a través de la información de forma visualmente atractiva.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
+</div>
 </section>
 
 <!-- FRASES -->
-
 <section id="frases" class="fade">
-
 <h2>FRASES DEL DISEÑO</h2>
-
 <div class="accordion">
-
 <div class="accordion-header">Ver frases</div>
-
 <div class="accordion-content">
-
 <div class="glass">
-
 <div class="frase">
 “El diseño no es solo cómo se ve o se siente. El diseño es cómo funciona.”
 <div class="autor">— Steve Jobs</div>
 </div>
-
 <div class="frase">
 “Menos, pero mejor.”
 <div class="autor">— Dieter Rams</div>
 </div>
-
 <div class="frase">
 “El diseño es el intermediario entre la información y la comprensión.”
 <div class="autor">— Hans Hofmann</div>
 </div>
-
 <div class="frase">
 “La simplicidad es la máxima sofisticación.”
 <div class="autor">— Leonardo da Vinci</div>
 </div>
-
 <div class="frase">
 “El buen diseño es obvio. El gran diseño es transparente.”
 <div class="autor">— Joe Sparano</div>
 </div>
-
 <div class="frase">
 “El contenido precede al diseño. Diseñar sin contenido no es diseño, es decoración.”
 <div class="autor">— Jeffrey Zeldman</div>
 </div>
-
 <div class="frase">
 “Diseñar es pensar hecho visible.”
 <div class="autor">— Saul Bass</div>
 </div>
-
 <div class="frase">
 “El diseño añade valor más rápido de lo que añade costos.”
 <div class="autor">— Joel Spolsky</div>
 </div>
-
 <div class="frase">
 “Todo está diseñado. Pocas cosas están bien diseñadas.”
 <div class="autor">— Brian Reed</div>
 </div>
-
 <div class="frase">
 “Un diseñador sabe que ha alcanzado la perfección no cuando no hay nada más que añadir, sino cuando no hay nada más que quitar.”
 <div class="autor">— Antoine de Saint-Exupéry</div>
 </div>
-
 </div>
 </div>
 </div>
-
 </section>
 
 <!-- PORTAFOLIO -->
-
 <section id="trabajos" class="fade">
-
 <h2>PORTAFOLIO</h2>
-
 <div class="carousel">
-
 <div class="carousel-track">
-
 <img src="img3.jpg">
 <img src="img4.jpg">
 <img src="img5.jpg">
 <img src="img6.jpg">
-
 <img src="img7.jpg">
 <img src="img8.jpg">
 <img src="img9.jpg">
 <img src="img10.jpg">
-
 <img src="img3.jpg">
 <img src="img4.jpg">
 <img src="img5.jpg">
 <img src="img6.jpg">
-
 </div>
 </div>
-
 </section>
 
 <!-- REDES -->
-
 <section class="social-section fade">
-
 <h2>REDES SOCIALES</h2>
-
 <div class="social-container">
-
 <a href="https://www.facebook.com/share/1E5MTZsxtm/" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-
 <a href="https://www.facebook.com/share/1EB4PKjfDp/" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-
 <a href="https://www.instagram.com/estibenportilla" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-
 <a href="https://youtube.com/@jepvizion" target="_blank" class="social-btn"><i class="fab fa-youtube"></i></a>
-
 <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
-
 </div>
-
 </section>
-
 </div>
 
 <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
-document.querySelectorAll(".subaccordion").forEach(btn=>{
-btn.addEventListener("click",function(){
-
-this.classList.toggle("active");
-
-let panel=this.nextElementSibling;
-
-if(panel.style.display==="block"){
-panel.style.display="none";
-}else{
-panel.style.display="block";
-}
-
-});
-});
-</a>
 
 <script>
-
+// Acordeones principales
 document.querySelectorAll(".accordion").forEach(a=>{
-a.querySelector(".accordion-header").onclick=()=>{
-a.classList.toggle("active");
-}
+    a.querySelector(".accordion-header").addEventListener("click", ()=>{
+        a.classList.toggle("active");
+    });
 });
 
-const elements=document.querySelectorAll('.fade');
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add('show');
-}
-});
-});
-
-elements.forEach(el=>observer.observe(el));
-
-/* SUB ACORDEON */
-
+// Sub-acordeones (dentro de Tipos de Diseño)
 document.querySelectorAll(".subaccordion").forEach(btn=>{
-btn.addEventListener("click",function(){
-
-this.classList.toggle("active");
-
-let panel=this.nextElementSibling;
-
-if(panel.style.display==="block"){
-panel.style.display="none";
-}else{
-panel.style.display="block";
-}
-
-});
+    btn.addEventListener("click", function(){
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if(panel.style.display === "block"){
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
 });
 
+// Animación de fade al hacer scroll
+const elements = document.querySelectorAll('.fade');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if(e.isIntersecting){
+            e.target.classList.add('show');
+        }
+    });
+});
+elements.forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
