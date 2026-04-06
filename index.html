@@ -23,7 +23,6 @@ align-items:center;
 width:100%;
 max-width:1200px;
 }
-
 /* NAV CON HAMBURGUESA */
 nav{
 position:fixed;
@@ -37,20 +36,17 @@ background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
-
 nav h2{
 font-family:'Bebas Neue';
 font-size:28px;
 color:#fff;
 }
-
 .hamburger {
     cursor: pointer;
     font-size: 34px;
     color: #fff;
     transition: 0.3s;
 }
-
 .hamburger:hover {
     color: #00d4ff;
     transform: scale(1.1);
@@ -70,11 +66,9 @@ color:#fff;
     border: 1px solid rgba(0,212,255,0.3);
     overflow: hidden;
 }
-
 .mobile-menu.active {
     display: block;
 }
-
 .menu-item {
     display: block;
     padding: 16px 25px;
@@ -84,15 +78,12 @@ color:#fff;
     transition: all 0.3s;
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-
 .menu-item:last-child {
     border-bottom: none;
 }
-
 .menu-item:hover {
     background: rgba(0, 212, 255, 0.15);
 }
-
 .menu-item.active {
     background: #00d4ff;
     color: #001b3a;
@@ -457,6 +448,7 @@ transform: scale(1.15);
     text-shadow: 0 0 10px rgba(255,255,255,0.9);
     white-space: nowrap;
 }
+
 /* RESPONSIVE */
 @media(max-width:768px){
     .profile-wrapper{
@@ -497,7 +489,7 @@ transform: scale(1.15);
     </div>
 </nav>
 
-<!-- MENÚ HAMBURGUESA CORREGIDO -->
+<!-- MENÚ HAMBURGUESA -->
 <div class="mobile-menu" id="mobile-menu">
     <a href="#inicio" class="menu-item">Inicio</a>
     <a href="#historia" class="menu-item">Historia</a>
@@ -523,7 +515,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 
-<!-- PORTAFOLIO (ahora con id correcto) -->
 <div id="trabajos" class="portfolio-hero">
 <h2>PORTAFOLIO</h2>
 <div class="carousel">
@@ -772,33 +763,68 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </a>
 
 <script>
-// MENÚ HAMBURGUESA
+// ==================== MENÚ HAMBURGUESA CON SCROLL FUNCIONAL ====================
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuItems = document.querySelectorAll('.menu-item');
 
 hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
-    if (mobileMenu.classList.contains('active')) {
-        hamburger.innerHTML = '<i class="fas fa-times"></i>';
-    } else {
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-    }
+    hamburger.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
 });
 
 menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        menuItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        
+    item.addEventListener('click', function(e) {
+        e.preventDefault();                    // Evita comportamiento por defecto
+
+        const targetId = this.getAttribute('href');   // Ej: "#historia"
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+            // Scroll suave con compensación del nav fijo
+            const navOffset = 80;
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - navOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+
+            // Cambiar color a azul claro
+            menuItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        // Cerrar menú después de hacer clic
         setTimeout(() => {
             mobileMenu.classList.remove('active');
             hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-        }, 300);
+        }, 600);
     });
 });
 
-// TUS SCRIPTS ORIGINALES
+// Resaltar sección actual mientras se hace scroll
+const sections = document.querySelectorAll('section[id]');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${currentId}`) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+}, { threshold: 0.6 });
+
+sections.forEach(section => observer.observe(section));
+
+// ==================== TUS SCRIPTS ORIGINALES ====================
 document.querySelectorAll(".accordion").forEach(a=>{
     a.querySelector(".accordion-header").addEventListener("click", ()=>{
         a.classList.toggle("active");
@@ -818,14 +844,14 @@ document.querySelectorAll(".subaccordion").forEach(btn=>{
 });
 
 const elements = document.querySelectorAll('.fade');
-const observer = new IntersectionObserver(entries => {
+const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
         if(e.isIntersecting){
             e.target.classList.add('show');
         }
     });
 });
-elements.forEach(el => observer.observe(el));
+elements.forEach(el => fadeObserver.observe(el));
 </script>
 </body>
 </html>
