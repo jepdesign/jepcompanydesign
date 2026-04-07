@@ -77,6 +77,7 @@ color:#fff;
     font-size: 18px;
     transition: all 0.3s;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
 }
 .menu-item:last-child {
     border-bottom: none;
@@ -90,7 +91,7 @@ color:#fff;
     font-weight: 700;
 }
 
-/* ==================== TUS ESTILOS ORIGINALES ==================== */
+/* ==================== ESTILOS ORIGINALES ==================== */
 .hero{
 min-height:100vh;
 display:flex;
@@ -491,13 +492,14 @@ transform: scale(1.15);
 
 <!-- MENÚ HAMBURGUESA -->
 <div class="mobile-menu" id="mobile-menu">
-    <a href="#inicio" class="menu-item">Inicio</a>
-    <a href="#historia" class="menu-item">Historia</a>
-    <a href="#tipos" class="menu-item">Tipos</a>
-    <a href="#frases" class="menu-item">Frases</a>
-    <a href="#trabajos" class="menu-item">Portafolio</a>
+    <a class="menu-item" data-target="inicio">Inicio</a>
+    <a class="menu-item" data-target="historia">Historia</a>
+    <a class="menu-item" data-target="tipos">Tipos</a>
+    <a class="menu-item" data-target="frases">Frases</a>
+    <a class="menu-item" data-target="trabajos">Portafolio</a>
 </div>
 
+<!-- ======== INICIO ======== -->
 <section class="hero fade" id="inicio">
 <h1>JEP DESIGN</h1>
 <div class="profile-wrapper">
@@ -514,9 +516,12 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 </div>
+</section>
 
-<div id="trabajos" class="portfolio-hero">
-<h2>PORTAFOLIO</h2>
+<!-- ======== PORTAFOLIO (sección propia) ======== -->
+<section id="trabajos" class="fade" style="padding-top:40px;">
+<div class="portfolio-hero">
+<h2 style="color:#fff;">PORTAFOLIO</h2>
 <div class="carousel">
 <div class="carousel-track">
 <img src="img3.jpg">
@@ -536,7 +541,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- HERRAMIENTAS -->
+<!-- ======== HERRAMIENTAS ======== -->
 <section class="fade">
 <h2>HERRAMIENTAS DE DISEÑO</h2>
 <h3>🧠 Con IA</h3>
@@ -571,7 +576,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- HISTORIA -->
+<!-- ======== HISTORIA ======== -->
 <section id="historia" class="fade">
 <h2>HISTORIA DEL DISEÑO</h2>
 <div class="accordion">
@@ -642,7 +647,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- TIPOS DE DISEÑO -->
+<!-- ======== TIPOS DE DISEÑO ======== -->
 <section id="tipos" class="fade">
 <h2>TIPOS DE DISEÑO</h2>
 <div class="accordion">
@@ -654,7 +659,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <button class="subaccordion">1. Logos y Branding</button>
 <div class="subpanel">
 <p>El logo es el símbolo o imagen que representa a una marca, mientras que el branding es todo el estilo visual que la hace reconocible (colores, tipografía, estilo de imágenes, etc.).</p>
-<p>🔹 Ejemplo: El logo de Nike con su “swoosh” o el de Apple con la manzana. Cuando ves esos símbolos, inmediatamente sabes qué marca es.</p>
+<p>🔹 Ejemplo: El logo de Nike con su "swoosh" o el de Apple con la manzana. Cuando ves esos símbolos, inmediatamente sabes qué marca es.</p>
 <p>👉 El objetivo es que la marca sea fácil de recordar y transmitir una identidad clara.</p>
 </div>
 <button class="subaccordion">2. Publicidad</button>
@@ -689,7 +694,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- FRASES DEL DISEÑO -->
+<!-- ======== FRASES ======== -->
 <section id="frases" class="fade">
 <h2>FRASES DEL DISEÑO</h2>
 <div class="accordion">
@@ -697,43 +702,43 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="accordion-content">
 <div class="glass">
 <div class="frase">
-“El diseño no es solo cómo se ve o se siente. El diseño es cómo funciona.”
+"El diseño no es solo cómo se ve o se siente. El diseño es cómo funciona."
 <div class="autor">— Steve Jobs</div>
 </div>
 <div class="frase">
-“Menos, pero mejor.”
+"Menos, pero mejor."
 <div class="autor">— Dieter Rams</div>
 </div>
 <div class="frase">
-“El diseño es el intermediario entre la información y la comprensión.”
+"El diseño es el intermediario entre la información y la comprensión."
 <div class="autor">— Hans Hofmann</div>
 </div>
 <div class="frase">
-“La simplicidad es la máxima sofisticación.”
+"La simplicidad es la máxima sofisticación."
 <div class="autor">— Leonardo da Vinci</div>
 </div>
 <div class="frase">
-“El buen diseño es obvio. El gran diseño es transparente.”
+"El buen diseño es obvio. El gran diseño es transparente."
 <div class="autor">— Joe Sparano</div>
 </div>
 <div class="frase">
-“El contenido precede al diseño. Diseñar sin contenido no es diseño, es decoración.”
+"El contenido precede al diseño. Diseñar sin contenido no es diseño, es decoración."
 <div class="autor">— Jeffrey Zeldman</div>
 </div>
 <div class="frase">
-“Diseñar es pensar hecho visible.”
+"Diseñar es pensar hecho visible."
 <div class="autor">— Saul Bass</div>
 </div>
 <div class="frase">
-“El diseño añade valor más rápido de lo que añade costos.”
+"El diseño añade valor más rápido de lo que añade costos."
 <div class="autor">— Joel Spolsky</div>
 </div>
 <div class="frase">
-“Todo está diseñado. Pocas cosas están bien diseñadas.”
+"Todo está diseñado. Pocas cosas están bien diseñadas."
 <div class="autor">— Brian Reed</div>
 </div>
 <div class="frase">
-“Un diseñador sabe que ha alcanzado la perfección no cuando no hay nada más que añadir, sino cuando no hay nada más que quitar.”
+"Un diseñador sabe que ha alcanzado la perfección no cuando no hay nada más que añadir, sino cuando no hay nada más que quitar."
 <div class="autor">— Antoine de Saint-Exupéry</div>
 </div>
 </div>
@@ -741,7 +746,7 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </section>
 
-<!-- REDES SOCIALES -->
+<!-- ======== REDES SOCIALES ======== -->
 <section class="social-section fade">
 <h2>REDES SOCIALES</h2>
 <div class="social-container">
@@ -763,95 +768,91 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </a>
 
 <script>
-// ==================== MENÚ HAMBURGUESA CON SCROLL FUNCIONAL ====================
+// ==================== MENÚ HAMBURGUESA ====================
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuItems = document.querySelectorAll('.menu-item');
 
+// Abrir / cerrar menú
 hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
-    hamburger.innerHTML = mobileMenu.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
+    hamburger.innerHTML = mobileMenu.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
         : '<i class="fas fa-bars"></i>';
 });
 
+// Función central de navegación
+function navigateTo(targetId) {
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection) return;
+
+    const navOffset = 80;
+    const offsetPosition = targetSection.getBoundingClientRect().top + window.scrollY - navOffset;
+
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+    // Marcar ítem activo
+    menuItems.forEach(i => i.classList.remove('active'));
+    document.querySelector(`.menu-item[data-target="${targetId}"]`)?.classList.add('active');
+
+    // Cerrar menú
+    setTimeout(() => {
+        mobileMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    }, 400);
+}
+
+// Clic en cada ítem del menú
 menuItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.preventDefault();                    // Evita comportamiento por defecto
-
-        const targetId = this.getAttribute('href');   // Ej: "#historia"
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-            // Scroll suave con compensación del nav fijo
-            const navOffset = 80;
-            const elementPosition = targetSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - navOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-
-            // Cambiar color a azul claro
-            menuItems.forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-        }
-
-        // Cerrar menú después de hacer clic
-        setTimeout(() => {
-            mobileMenu.classList.remove('active');
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-        }, 600);
+    item.addEventListener('click', () => {
+        navigateTo(item.getAttribute('data-target'));
     });
 });
 
-// Resaltar sección actual mientras se hace scroll
+// Resaltar sección activa al hacer scroll
 const sections = document.querySelectorAll('section[id]');
-const observer = new IntersectionObserver(entries => {
+const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const currentId = entry.target.getAttribute('id');
+            const id = entry.target.getAttribute('id');
             menuItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === `#${currentId}`) {
-                    item.classList.add('active');
-                }
+                item.classList.toggle('active', item.getAttribute('data-target') === id);
             });
         }
     });
-}, { threshold: 0.6 });
+}, { threshold: 0.4 });
+sections.forEach(s => sectionObserver.observe(s));
 
-sections.forEach(section => observer.observe(section));
+// Cerrar menú si se hace clic fuera
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
 
-// ==================== TUS SCRIPTS ORIGINALES ====================
-document.querySelectorAll(".accordion").forEach(a=>{
-    a.querySelector(".accordion-header").addEventListener("click", ()=>{
+// ==================== ACORDEONES ====================
+document.querySelectorAll(".accordion").forEach(a => {
+    a.querySelector(".accordion-header").addEventListener("click", () => {
         a.classList.toggle("active");
     });
 });
 
-document.querySelectorAll(".subaccordion").forEach(btn=>{
-    btn.addEventListener("click", function(){
+document.querySelectorAll(".subaccordion").forEach(btn => {
+    btn.addEventListener("click", function () {
         this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if(panel.style.display === "block"){
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
     });
 });
 
-const elements = document.querySelectorAll('.fade');
+// ==================== FADE IN AL SCROLL ====================
 const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
-        if(e.isIntersecting){
-            e.target.classList.add('show');
-        }
+        if (e.isIntersecting) e.target.classList.add('show');
     });
 });
-elements.forEach(el => fadeObserver.observe(el));
+document.querySelectorAll('.fade').forEach(el => fadeObserver.observe(el));
 </script>
 </body>
 </html>
