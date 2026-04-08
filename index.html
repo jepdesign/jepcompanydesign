@@ -97,7 +97,34 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
   filter:blur(6px);z-index:-1;
 }
 @keyframes fire{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-.profile-card img{width:220px;height:auto;border-radius:12px;}
+
+/* ===== TELÉFONO 3D (reemplaza img1.jpg) ===== */
+.phone-scene {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  width: 220px;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+}
+.phone-wrapper-3d {
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 50px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    0 0 40px rgba(255,100,255,0.4),
+    0 0 80px rgba(100,200,255,0.3),
+    inset 0 0 30px rgba(255,255,255,0.1);
+}
+.phone-wrapper-3d img {
+  width: 100%;
+  display: block;
+  border-radius: 50px;
+}
+/* ============================================ */
+
 .profile-right{width:60%;color:#000;text-align:left;}
 .profile-small{font-family:'Playfair Display';font-size:40px;}
 .profile-big{font-family:'Playfair Display';font-size:70px;font-weight:700;}
@@ -163,6 +190,7 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
   .carousel-track img{width:160px;height:200px;}
   .social-btn{width:80px;height:80px;font-size:36px;}
   .whatsapp-btn{width:60px;height:60px;font-size:32px;}
+  .phone-scene{width:180px;}
 }
 </style>
 </head>
@@ -188,7 +216,13 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
 <div class="profile-wrapper">
 <div class="profile-left">
 <div class="profile-card">
-<img src="img1.jpg" alt="Tu imagen">
+  <!-- TELÉFONO 3D (reemplaza img1.jpg) -->
+  <div class="phone-scene" id="phone-scene">
+    <div class="phone-wrapper-3d" id="phone-3d">
+      <img src="https://raw.githubusercontent.com/TU_USUARIO/TU_REPOSITORIO/main/img2.png"
+           alt="Estiben Portilla - Teléfono 3D">
+    </div>
+  </div>
 </div>
 </div>
 <div class="profile-right">
@@ -224,7 +258,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="tools-item"><img src="leonardoai.png"></div>
 <div class="tools-item"><img src="removebg.png"></div>
 <div class="tools-item"><img src="lovart.png"></div>
-<!-- Duplicado para que el carrusel infinito funcione perfectamente (igual que antes) -->
 <div class="tools-item"><img src="adobefirefly.png"></div>
 <div class="tools-item"><img src="midjourney.png"></div>
 <div class="tools-item"><img src="dalle.png"></div>
@@ -233,7 +266,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="tools-item"><img src="removebg.png"></div>
 <div class="tools-item"><img src="lovart.png"></div>
 </div></div>
-
 <h3 style="margin-top:60px;">🧰 Convencionales</h3>
 <div class="tools-carousel"><div class="tools-track">
 <div class="tools-item"><img src="https://cdn.simpleicons.org/adobephotoshop/ffffff"></div>
@@ -407,6 +439,30 @@ var obs = new IntersectionObserver(function(entries) {
   });
 });
 document.querySelectorAll('.fade').forEach(function(el) { obs.observe(el); });
+
+// ===== TELÉFONO 3D =====
+var phoneScene = document.getElementById('phone-scene');
+var phone3d = document.getElementById('phone-3d');
+var MAX_TILT = 28;
+var SENSITIVITY = 1.2;
+phoneScene.addEventListener('mousemove', function(e) {
+  var rect = phoneScene.getBoundingClientRect();
+  var x = (e.clientX - rect.left) / rect.width;
+  var y = (e.clientY - rect.top) / rect.height;
+  var rotateY = (x - 0.5) * MAX_TILT * SENSITIVITY * 2;
+  var rotateX = (0.5 - y) * MAX_TILT * SENSITIVITY * 2;
+  phone3d.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(30px)';
+});
+phoneScene.addEventListener('mouseleave', function() {
+  phone3d.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+});
+if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', function(e) {
+    var tiltX = Math.max(-MAX_TILT, Math.min(MAX_TILT, e.beta || 0)) * 0.8;
+    var tiltY = Math.max(-MAX_TILT, Math.min(MAX_TILT, -(e.gamma || 0))) * 0.8;
+    phone3d.style.transform = 'rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateZ(20px)';
+  });
+}
 </script>
 </body>
 </html>
