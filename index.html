@@ -18,7 +18,6 @@ body{
   align-items:center;
 }
 .main{width:100%;max-width:1200px;}
-
 nav{
   position:fixed;
   width:100%;
@@ -32,7 +31,6 @@ nav{
   z-index:1000;
 }
 nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
-
 .hamburger{
   cursor:pointer;
   font-size:34px;
@@ -41,7 +39,6 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
   line-height:1;
 }
 .hamburger:hover{color:#00d4ff;}
-
 .mobile-menu{
   display:none;
   position:fixed;
@@ -56,7 +53,6 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
   z-index:9999;
 }
 .mobile-menu.open{display:block !important;}
-
 .menu-item{
   display:block;
   padding:16px 25px;
@@ -69,7 +65,6 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
 }
 .menu-item:last-child{border-bottom:none;}
 .menu-item:hover{background:rgba(0,212,255,0.2);color:#00d4ff;}
-
 .hero{
   min-height:100vh;
   display:flex;
@@ -107,41 +102,34 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
 .profile-small{font-family:'Playfair Display';font-size:40px;}
 .profile-big{font-family:'Playfair Display';font-size:70px;font-weight:700;}
 .profile-text{font-size:15px;line-height:1.8;color:#333;margin-top:15px;max-width:500px;}
-
 .carousel{overflow:hidden;margin-top:20px;}
 .carousel-track{display:flex;width:max-content;animation:scrollAnim 30s linear infinite;}
 .carousel:hover .carousel-track{animation-play-state:paused;}
 .carousel-track img{width:200px;height:250px;margin:10px;border-radius:20px;object-fit:cover;}
 @keyframes scrollAnim{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
 section{padding:100px 20px;width:100%;}
 h2{font-size:40px;margin-bottom:20px;}
 h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;margin-top:10px;}
-
 .tools-carousel{overflow:hidden;width:100%;margin-top:40px;}
 .tools-track{display:flex;gap:40px;width:max-content;animation:scrollTools 30s linear infinite;}
 .tools-carousel:hover .tools-track{animation-play-state:paused;}
 .tools-item{width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .tools-item img{width:45px;height:45px;object-fit:contain;}
 @keyframes scrollTools{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
 .accordion{margin-top:10px;cursor:pointer;}
 .accordion-header{padding:15px;background:#111;border-radius:10px;}
 .accordion.active .accordion-header{background:#00d4ff;color:#000;}
 .accordion-content{max-height:0;overflow:hidden;transition:0.5s;}
 .accordion.active .accordion-content{max-height:1200px;margin-top:10px;}
 .glass{background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;}
-
 .subaccordion{
   background:#1a3b78;cursor:pointer;padding:14px;width:100%;border:none;
   text-align:left;font-size:18px;color:white;margin-top:10px;border-radius:6px;transition:0.3s;
 }
 .subaccordion.active{background:#5fb0ff;color:#001b3a;}
 .subpanel{display:none;padding:15px;margin-top:5px;background:#0f2a57;border-radius:6px;line-height:1.6;}
-
 .fade{opacity:0;transform:translateY(60px);transition:1s;}
 .fade.show{opacity:1;transform:translateY(0);}
-
 .social-section{text-align:center;}
 .social-container{display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin-top:40px;}
 .social-btn{
@@ -160,13 +148,11 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
 .social-btn.tiktok{background:#000;box-shadow:0 10px 25px rgba(0,255,255,0.5);}
 .social-btn.tiktok:hover{transform:translateY(-12px) rotate(-8deg) scale(1.1);}
 .social-btn i{z-index:2;}
-
 .whatsapp-float{position:fixed;bottom:30px;right:30px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:9999;text-decoration:none;transition:all 0.4s ease;}
 .whatsapp-float:hover{transform:translateY(-6px);}
 .whatsapp-btn{width:68px;height:68px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;color:white;box-shadow:0 8px 25px rgba(37,211,102,0.65);transition:all 0.3s ease;}
 .whatsapp-btn:hover{transform:scale(1.15) rotate(12deg);box-shadow:0 0 40px #25D366;}
 .whatsapp-text{color:white;font-family:'Bebas Neue',sans-serif;font-size:17px;font-weight:700;letter-spacing:1px;text-shadow:0 0 10px rgba(255,255,255,0.9);white-space:nowrap;}
-
 @media(max-width:768px){
   .profile-wrapper{flex-direction:column;text-align:center;}
   .profile-left,.profile-right{width:100%;}
@@ -182,12 +168,10 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
 </head>
 <body>
 <div class="main">
-
 <nav>
   <h2>JEP DESIGN</h2>
   <div class="hamburger" id="hamburger">☰</div>
 </nav>
-
 <!-- MENÚ HAMBURGUESA -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="menu-item" onclick="irA('inicio')">🏠 Inicio</div>
@@ -198,7 +182,6 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
   <div class="menu-item" onclick="irA('frases')">💬 Frases</div>
   <div class="menu-item" onclick="irA('redes')">📱 Redes Sociales</div>
 </div>
-
 <!-- INICIO -->
 <section class="hero fade" id="inicio">
 <h1>JEP DESIGN</h1>
@@ -217,7 +200,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 </section>
-
 <!-- PORTAFOLIO -->
 <section id="portafolio" class="fade">
 <h2>PORTAFOLIO</h2>
@@ -230,23 +212,28 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div>
 </div>
 </section>
-
 <!-- HERRAMIENTAS -->
 <section id="herramientas" class="fade">
 <h2>HERRAMIENTAS DE DISEÑO</h2>
 <h3>🧠 Con IA</h3>
 <div class="tools-carousel"><div class="tools-track">
-<div class="tools-item"><img src="https://cdn.simpleicons.org/openai/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/stabilityai/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/canva/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/figma/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/webflow/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/openai/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/stabilityai/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/canva/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/figma/ffffff"></div>
-<div class="tools-item"><img src="https://cdn.simpleicons.org/webflow/ffffff"></div>
+<div class="tools-item"><img src="adobefirefly.png"></div>
+<div class="tools-item"><img src="midjourney.png"></div>
+<div class="tools-item"><img src="dalle.png"></div>
+<div class="tools-item"><img src="canva.png"></div>
+<div class="tools-item"><img src="leonardoai.png"></div>
+<div class="tools-item"><img src="removebg.png"></div>
+<div class="tools-item"><img src="lovart.png"></div>
+<!-- Duplicado para que el carrusel infinito funcione perfectamente (igual que antes) -->
+<div class="tools-item"><img src="adobefirefly.png"></div>
+<div class="tools-item"><img src="midjourney.png"></div>
+<div class="tools-item"><img src="dalle.png"></div>
+<div class="tools-item"><img src="canva.png"></div>
+<div class="tools-item"><img src="leonardoai.png"></div>
+<div class="tools-item"><img src="removebg.png"></div>
+<div class="tools-item"><img src="lovart.png"></div>
 </div></div>
+
 <h3 style="margin-top:60px;">🧰 Convencionales</h3>
 <div class="tools-carousel"><div class="tools-track">
 <div class="tools-item"><img src="https://cdn.simpleicons.org/adobephotoshop/ffffff"></div>
@@ -261,7 +248,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <div class="tools-item"><img src="https://cdn.simpleicons.org/blender/ffffff"></div>
 </div></div>
 </section>
-
 <!-- HISTORIA -->
 <section id="historia" class="fade">
 <h2>HISTORIA DEL DISEÑO</h2>
@@ -314,7 +300,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div></div>
 </div>
 </section>
-
 <!-- TIPOS -->
 <section id="tipos" class="fade">
 <h2>TIPOS DE DISEÑO</h2>
@@ -335,7 +320,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div></div>
 </div>
 </section>
-
 <!-- FRASES -->
 <section id="frases" class="fade">
 <h2>FRASES DEL DISEÑO</h2>
@@ -355,7 +339,6 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 </div></div>
 </div>
 </section>
-
 <!-- REDES SOCIALES -->
 <section id="redes" class="social-section fade">
 <h2>REDES SOCIALES</h2>
@@ -367,20 +350,16 @@ Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de 
 <a href="https://vm.tiktok.com/ZS98VnbD2kmaG-WQ069/" target="_blank" class="social-btn tiktok"><i class="fab fa-tiktok"></i></a>
 </div>
 </section>
-
 </div>
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/573223729232?text=Hola%20quiero%20información" target="_blank" class="whatsapp-float">
   <div class="whatsapp-btn"><i class="fab fa-whatsapp"></i></div>
   <div class="whatsapp-text">Contáctanos</div>
 </a>
-
 <script>
 // ===== HAMBURGUESA =====
 var btn = document.getElementById('hamburger');
 var menu = document.getElementById('mobile-menu');
-
 btn.onclick = function(e) {
   e.stopPropagation();
   var abierto = menu.classList.contains('open');
@@ -392,14 +371,12 @@ btn.onclick = function(e) {
     btn.innerHTML = '✕';
   }
 };
-
 document.addEventListener('click', function(e) {
   if (!menu.contains(e.target) && e.target !== btn) {
     menu.classList.remove('open');
     btn.innerHTML = '☰';
   }
 });
-
 // ===== NAVEGACIÓN =====
 function irA(id) {
   var destino = document.getElementById(id);
@@ -410,14 +387,12 @@ function irA(id) {
   menu.classList.remove('open');
   btn.innerHTML = '☰';
 }
-
 // ===== ACORDEONES =====
 document.querySelectorAll('.accordion-header').forEach(function(h) {
   h.addEventListener('click', function() {
     this.parentElement.classList.toggle('active');
   });
 });
-
 document.querySelectorAll('.subaccordion').forEach(function(b) {
   b.addEventListener('click', function() {
     this.classList.toggle('active');
@@ -425,7 +400,6 @@ document.querySelectorAll('.subaccordion').forEach(function(b) {
     p.style.display = p.style.display === 'block' ? 'none' : 'block';
   });
 });
-
 // ===== FADE =====
 var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
