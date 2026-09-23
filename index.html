@@ -22,6 +22,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
+  overflow-x:hidden;
 }
 .main{width:100%;max-width:1200px;}
 nav{
@@ -190,9 +191,9 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
 .profile-name{font-size:44px;line-height:1.15;}
 .profile-name .highlight{background:linear-gradient(90deg,#001f5b,#0057b8);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .profile-subtitle{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#0057b8;font-weight:700;margin-top:10px;}
-.skill-pills{display:flex;flex-direction:column;gap:14px;margin-top:22px;max-width:520px;}
+.skill-pills{display:flex;flex-direction:column;gap:14px;margin-top:22px;max-width:620px;width:100%;}
 .pill{padding:16px 20px;border-radius:16px;font-size:14px;font-weight:600;color:#fff;display:flex;align-items:flex-start;gap:14px;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:transform 0.35s ease,box-shadow 0.35s ease;}
-.pill:hover{transform:translateX(8px) scale(1.02);box-shadow:0 14px 32px rgba(0,0,0,0.3);}
+.pill:hover{transform:translateX(6px) scale(1.01);box-shadow:0 14px 32px rgba(0,0,0,0.3);}
 .pill i{font-size:22px;margin-top:2px;flex-shrink:0;}
 .pill strong{display:block;font-size:15px;margin-bottom:3px;letter-spacing:0.5px;}
 .pill span{font-weight:400;font-size:13px;opacity:0.92;line-height:1.5;}
@@ -204,6 +205,135 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
   .skill-pills{max-width:100%;}
   .pill{text-align:left;}
 }
+
+/* ===== TARJETAS EXPANDIBLES DE HABILIDADES ===== */
+.pill-card{width:100%;}
+.pill{cursor:pointer;position:relative;padding-right:54px;}
+.pill .pill-arrow{
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:16px;
+  margin-top:0;
+  opacity:.9;
+  transition:transform .4s ease;
+}
+.pill-card.open .pill .pill-arrow{transform:translateY(-50%) rotate(180deg);}
+.pill-card.open .pill{box-shadow:0 16px 38px rgba(0,0,0,0.35);}
+
+.pill-detail{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .7s cubic-bezier(.4,0,.2,1);
+}
+.pill-card.open .pill-detail{max-height:6000px;}
+
+.pill-detail-inner{
+  background:#ffffff;
+  color:#1a1a1a;
+  border-radius:18px;
+  padding:26px 24px;
+  margin-top:12px;
+  text-align:left;
+  box-shadow:0 18px 42px rgba(0,0,0,0.28);
+  font-size:14px;
+  line-height:1.7;
+  border-top:4px solid #00a2ff;
+}
+.pd-head{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:27px;
+  letter-spacing:1px;
+  color:#001f5b;
+  margin-bottom:8px;
+  line-height:1.15;
+}
+.pd-intro{color:#4a4a4a;font-size:13.5px;margin-bottom:6px;}
+.pd-sub{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px;
+  letter-spacing:.6px;
+  color:#0057b8;
+  margin:22px 0 10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.pd-sub::before{
+  content:"";
+  width:6px;
+  height:22px;
+  border-radius:4px;
+  background:linear-gradient(#001f5b,#00a2ff);
+  display:block;
+  flex-shrink:0;
+}
+.pd-list{list-style:none;margin:0;padding:0;}
+.pd-list li{position:relative;padding-left:20px;margin-bottom:7px;color:#333;font-size:13.5px;}
+.pd-list li::before{content:"▸";position:absolute;left:0;top:0;color:#00a2ff;font-weight:700;}
+.pd-list li strong{color:#001f5b;}
+
+.pd-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+.pd-tag{
+  background:#001f5b;color:#fff;font-size:11px;font-weight:600;
+  padding:5px 12px;border-radius:20px;letter-spacing:.4px;
+}
+.pd-tag.alt{background:#00a2ff;}
+.pd-tag.warm{background:#ff6a00;}
+.pd-tag.pink{background:#ee0979;}
+.pd-tag.green{background:#0f9b0f;}
+.pd-tag.teal{background:#00c9a7;color:#003b30;}
+
+.pd-quote{
+  border-left:4px solid #00a2ff;
+  background:#eef6ff;
+  padding:12px 16px;
+  border-radius:0 12px 12px 0;
+  font-style:italic;
+  color:#1a3b78;
+  margin-top:14px;
+  font-size:13px;
+}
+.pd-note{
+  background:linear-gradient(135deg,#001f5b,#0057b8);
+  color:#fff;
+  border-radius:14px;
+  padding:16px 18px;
+  margin-top:18px;
+  font-size:13px;
+  line-height:1.7;
+}
+.pd-note strong{color:#8fd8ff;}
+.pd-note.orange{background:linear-gradient(135deg,#7a1e00,#ff6a00);}
+.pd-note.orange strong{color:#ffe08a;}
+.pd-note.green{background:linear-gradient(135deg,#053b1e,#0f9b0f);}
+.pd-note.green strong{color:#b6ffb6;}
+
+.pd-mini{
+  background:#f4f7fd;
+  border:1px solid #dbe6f7;
+  border-radius:14px;
+  padding:14px 16px;
+  margin-top:12px;
+  font-size:13px;
+  color:#333;
+}
+.pd-mini b{color:#001f5b;}
+
+.pd-hint{
+  font-size:12px;
+  color:#5a5a5a;
+  margin-top:14px;
+  font-style:italic;
+}
+@media(max-width:768px){
+  .pill-detail-inner{padding:20px 16px;font-size:13.5px;}
+  .pd-head{font-size:23px;}
+  .pd-sub{font-size:18px;}
+}
+/* ============================================== */
+
 .carousel{overflow:hidden;margin-top:20px;}
 .carousel-track{display:flex;width:max-content;animation:scrollAnim 30s linear infinite;}
 .carousel:hover .carousel-track{animation-play-state:paused;}
@@ -436,19 +566,263 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
 <div class="profile-text">
 Una mente multifacética que combina creatividad, estrategia y visión financiera para construir marca, negocio y patrimonio al mismo tiempo.
 </div>
+
 <div class="skill-pills">
-  <div class="pill pill-design">
-    <i class="fas fa-pen-nib"></i>
-    <div><strong>Diseño</strong><span>Diseño Web, Diseño Gráfico y Diseño de Interiores</span></div>
+
+  <!-- ============================================================
+       TARJETA 1 · DISEÑO
+  ============================================================= -->
+  <div class="pill-card">
+    <div class="pill pill-design" onclick="togglePill(this)">
+      <i class="fas fa-pen-nib"></i>
+      <div><strong>Diseño</strong><span>Diseño Web, Diseño Gráfico y Diseño de Interiores</span></div>
+      <i class="fas fa-chevron-down pill-arrow"></i>
+    </div>
+    <div class="pill-detail">
+      <div class="pill-detail-inner">
+        <div class="pd-head">🎨 DISEÑO — CREATIVIDAD CON PROPÓSITO</div>
+        <p class="pd-intro">
+          Diseñar no es decorar: es <strong>resolver problemas con estética</strong>. Trabajo tres disciplinas que se conectan
+          entre sí: la pantalla (web), la marca (gráfico) y el espacio (interiores). Las tres usan el mismo principio:
+          ordenar información y emoción para que el mensaje llegue claro, rápido y con personalidad.
+        </p>
+
+        <div class="pd-sub">1. DISEÑO WEB</div>
+        <ul class="pd-list">
+          <li><strong>Qué hago:</strong> landing pages de conversión, sitios corporativos, portafolios, tiendas online y prototipos UI/UX.</li>
+          <li><strong>Estructura:</strong> arquitectura de información, wireframes, jerarquía visual y llamado a la acción (CTA) claro.</li>
+          <li><strong>Mobile first:</strong> más del 70% del tráfico llega desde el celular, así que diseño primero para pantallas pequeñas y escalo a desktop.</li>
+          <li><strong>Velocidad:</strong> una web que tarda más de 3 segundos en cargar pierde buena parte de sus visitantes. Optimizo imágenes, uso lazy loading y reduzco código.</li>
+          <li><strong>SEO técnico:</strong> etiquetas semánticas, títulos, meta descripciones, sitemap y estructura de enlaces.</li>
+          <li><strong>Accesibilidad:</strong> contraste mínimo 4.5:1, textos alternativos y navegación por teclado.</li>
+          <li><strong>Diseño responsive:</strong> breakpoints típicos en 480 / 768 / 1024 / 1440 px.</li>
+        </ul>
+        <div class="pd-tags">
+          <span class="pd-tag">HTML5</span>
+          <span class="pd-tag">CSS3</span>
+          <span class="pd-tag">JavaScript</span>
+          <span class="pd-tag alt">WordPress</span>
+          <span class="pd-tag alt">Figma</span>
+          <span class="pd-tag alt">Canva</span>
+          <span class="pd-tag alt">UI / UX</span>
+        </div>
+        <div class="pd-quote">
+          "El usuario se forma una opinión de tu web en 0,05 segundos. El diseño deja de ser estética y se convierte en credibilidad."
+        </div>
+
+        <div class="pd-sub">2. DISEÑO GRÁFICO</div>
+        <ul class="pd-list">
+          <li><strong>Identidad visual:</strong> logo, paleta de color, tipografías, íconos y manual de marca completo.</li>
+          <li><strong>Piezas que desarrollo:</strong> flyers, banners, packaging, etiquetas, publicidad impresa, portadas y contenido para redes.</li>
+          <li><strong>Psicología del color:</strong> azul = confianza y tecnología · rojo = urgencia y pasión · verde = salud y naturaleza · amarillo = atención · negro = elegancia · naranja = acción y energía.</li>
+          <li><strong>Composición:</strong> regla de tercios, proporción áurea, punto focal, equilibrio y uso inteligente del espacio en blanco.</li>
+          <li><strong>Tipografía:</strong> máximo 2 o 3 familias por pieza, interlineado entre 1.4 y 1.6, jerarquía clara entre título, subtítulo y cuerpo.</li>
+          <li><strong>Técnica:</strong> vector vs mapa de bits · CMYK a 300 dpi para imprenta · RGB a 72 dpi para pantalla · sangrado de 3 mm en impresos.</li>
+        </ul>
+        <div class="pd-tags">
+          <span class="pd-tag warm">Photoshop</span>
+          <span class="pd-tag warm">Illustrator</span>
+          <span class="pd-tag warm">CorelDRAW</span>
+          <span class="pd-tag alt">Branding</span>
+          <span class="pd-tag alt">Packaging</span>
+          <span class="pd-tag alt">IA generativa</span>
+        </div>
+
+        <div class="pd-sub">3. DISEÑO DE INTERIORES</div>
+        <ul class="pd-list">
+          <li><strong>Zonificación:</strong> separar áreas de descanso, trabajo, social y circulación según el uso real del espacio.</li>
+          <li><strong>Circulación:</strong> pasillos de mínimo 90 cm, ideal 120 cm, para que el espacio se sienta fluido y no claustrofóbico.</li>
+          <li><strong>Iluminación en 3 capas:</strong> general (ambiente), de tarea (escritorio o cocina) y de acento (decorativa, para destacar).</li>
+          <li><strong>Estilos:</strong> minimalista, nórdico, industrial, contemporáneo, boho y clásico moderno.</li>
+          <li><strong>Materiales y texturas:</strong> madera aporta calidez, metal aporta modernidad, piedra aporta solidez, textil aporta suavidad.</li>
+          <li><strong>Errores comunes:</strong> muebles demasiado grandes en espacios pequeños, poca iluminación natural, exceso de tendencias y falta de almacenamiento oculto.</li>
+          <li><strong>Dato práctico:</strong> el triángulo de trabajo en cocina (fogón – lavadero – nevera) reduce el esfuerzo y el tiempo de preparación.</li>
+        </ul>
+        <div class="pd-tags">
+          <span class="pd-tag teal">SketchUp</span>
+          <span class="pd-tag teal">AutoCAD</span>
+          <span class="pd-tag teal">Iluminación</span>
+          <span class="pd-tag teal">Materiales</span>
+          <span class="pd-tag teal">Render 3D</span>
+        </div>
+
+        <div class="pd-note">
+          <strong>Datos que quizá no sabías:</strong><br>
+          🎯 El color puede aumentar el reconocimiento de una marca hasta en un 80%.<br>
+          🎯 El 94% de las primeras impresiones de un sitio web están relacionadas directamente con su diseño.<br>
+          🎯 Un buen diseño no solo se ve bien: se entiende sin esfuerzo. Esa es la verdadera meta.
+        </div>
+
+        <p class="pd-hint">💡 Toca otra tarjeta para cerrar esta y abrir la siguiente.</p>
+      </div>
+    </div>
   </div>
-  <div class="pill pill-marketing">
-    <i class="fas fa-bullhorn"></i>
-    <div><strong>Marketing & Negocios</strong><span>Marketing digital con Hotmart · Fundador y creador de AXTOON Distribuidora S.A.S</span></div>
+
+  <!-- ============================================================
+       TARJETA 2 · MARKETING & NEGOCIOS
+  ============================================================= -->
+  <div class="pill-card">
+    <div class="pill pill-marketing" onclick="togglePill(this)">
+      <i class="fas fa-bullhorn"></i>
+      <div><strong>Marketing &amp; Negocios</strong><span>Marketing digital con Hotmart · Fundador y creador de AXTOON Distribuidora S.A.S</span></div>
+      <i class="fas fa-chevron-down pill-arrow"></i>
+    </div>
+    <div class="pill-detail">
+      <div class="pill-detail-inner">
+        <div class="pd-head">📈 MARKETING &amp; NEGOCIOS — VENDER ES UN SISTEMA</div>
+        <p class="pd-intro">
+          El diseño llama la atención, pero el marketing <strong>convierte esa atención en dinero</strong>. Aquí combino dos frentes:
+          el mundo digital (productos, embudos y tráfico) y el mundo físico (distribución, inventario y clientes reales).
+        </p>
+
+        <div class="pd-sub">1. MARKETING DIGITAL CON HOTMART</div>
+        <ul class="pd-list">
+          <li><strong>Qué es Hotmart:</strong> una de las plataformas de productos digitales más grandes del mundo, con más de 30 millones de usuarios y presencia en decenas de países.</li>
+          <li><strong>Qué se vende:</strong> cursos online, ebooks, plantillas, membresías, software y comunidades privadas.</li>
+          <li><strong>Los 3 roles:</strong> productor (crea el producto), afiliado (lo promociona) y comprador (lo consume).</li>
+          <li><strong>Comisiones de afiliado:</strong> entre el 20% y el 80% del valor del producto, según lo configure el productor.</li>
+          <li><strong>Ventajas técnicas:</strong> pagos automáticos, cobro en múltiples monedas, gestión de impuestos, garantía de reembolso de 7 a 30 días y área de miembros incluida.</li>
+        </ul>
+
+        <div class="pd-mini">
+          <b>El embudo de ventas explicado fácil:</b><br>
+          🔹 <b>TOFU (arriba):</b> atraer con contenido, reels, SEO o anuncios.<br>
+          🔹 <b>MOFU (medio):</b> nutrir con correos, newsletters, webinars y valor gratuito.<br>
+          🔹 <b>BOFU (abajo):</b> convertir con oferta clara, urgencia real y prueba social.
+        </div>
+
+        <ul class="pd-list" style="margin-top:14px;">
+          <li><strong>Tipos de tráfico:</strong> orgánico (SEO, contenido, redes) que es lento pero gratuito y acumulativo; y pago (Meta Ads, Google Ads, TikTok Ads) que es inmediato pero requiere presupuesto y control de métricas.</li>
+          <li><strong>Copywriting:</strong> uso estructuras probadas como <em>AIDA</em> (Atención – Interés – Deseo – Acción) y <em>PAS</em> (Problema – Agitación – Solución).</li>
+          <li><strong>Gatillos mentales:</strong> escasez, urgencia, prueba social, autoridad, reciprocidad y compromiso.</li>
+          <li><strong>Email marketing:</strong> sigue siendo el canal con mejor retorno. Una secuencia de bienvenida y un flujo de carrito abandonado pueden recuperar ventas que ya creías perdidas.</li>
+          <li><strong>Métricas que importan:</strong> CTR (clics), CPA (costo por adquisición), ROAS (retorno de la inversión publicitaria), ticket promedio, LTV (valor del cliente) y tasa de conversión.</li>
+        </ul>
+
+        <div class="pd-mini">
+          <b>Ejemplo real con números:</b> un producto digital de 50 USD con 50% de comisión deja 25 USD por venta.
+          Con 100 clics y una conversión del 2%, son 2 ventas = 50 USD. Si subes la conversión al 4% con mejor copy y mejor página,
+          duplicas el ingreso sin gastar un peso más en tráfico. <b>Ese es el poder de optimizar.</b>
+        </div>
+
+        <div class="pd-tags">
+          <span class="pd-tag pink">Hotmart</span>
+          <span class="pd-tag pink">Embudos</span>
+          <span class="pd-tag pink">Copywriting</span>
+          <span class="pd-tag pink">Meta Ads</span>
+          <span class="pd-tag warm">Email Marketing</span>
+          <span class="pd-tag warm">SEO</span>
+          <span class="pd-tag warm">ROAS</span>
+        </div>
+
+        <div class="pd-sub">2. AXTOON DISTRIBUIDORA S.A.S</div>
+        <ul class="pd-list">
+          <li><strong>Mi rol:</strong> fundador y creador de la empresa, responsable de la visión, la marca y la operación.</li>
+          <li><strong>Qué hace una distribuidora:</strong> compra directamente a fabricantes o mayoristas y vende a comercios o al consumidor final, agregando valor con logística, disponibilidad y precio.</li>
+          <li><strong>Márgenes:</strong> el corazón del negocio. Precio de venta = costo del producto + gastos operativos + margen de ganancia. Vender mucho con margen bajo puede ser menos rentable que vender poco con margen sano.</li>
+          <li><strong>Rotación de inventario:</strong> el producto parado es dinero dormido. Se mide cuántas veces se vende el inventario en un período.</li>
+          <li><strong>Flujo de caja:</strong> no es lo mismo ganar que tener liquidez. Una empresa puede ser rentable en papel y quebrar por falta de efectivo.</li>
+          <li><strong>Negociación con proveedores:</strong> mejores precios por volumen, plazos de pago, exclusividad de producto y soporte en garantías.</li>
+          <li><strong>Atención al cliente:</strong> en distribución el servicio postventa es lo que genera recompra y recomendación.</li>
+          <li><strong>Ventaja de una S.A.S en Colombia:</strong> responsabilidad limitada al aporte de los socios, posibilidad de tener varios accionistas, facturación formal y acceso a cuentas bancarias empresariales.</li>
+        </ul>
+
+        <div class="pd-note orange">
+          <strong>Lo que me enseñó emprender:</strong><br>
+          💼 El producto no se vende solo: se vende el sistema que hay detrás.<br>
+          💼 Reinvertir al inicio no es perder dinero, es comprar futuro.<br>
+          💼 Un negocio sin números claros es solo una idea con buena energía.
+        </div>
+
+        <p class="pd-hint">💡 Toca otra tarjeta para cerrar esta y abrir la siguiente.</p>
+      </div>
+    </div>
   </div>
-  <div class="pill pill-invest">
-    <i class="fas fa-chart-line"></i>
-    <div><strong>Inversiones</strong><span>Bolsa de Nueva York · Bolsa de Colombia · Criptomonedas</span></div>
+
+  <!-- ============================================================
+       TARJETA 3 · INVERSIONES
+  ============================================================= -->
+  <div class="pill-card">
+    <div class="pill pill-invest" onclick="togglePill(this)">
+      <i class="fas fa-chart-line"></i>
+      <div><strong>Inversiones</strong><span>Bolsa de Nueva York · Bolsa de Colombia · Criptomonedas</span></div>
+      <i class="fas fa-chevron-down pill-arrow"></i>
+    </div>
+    <div class="pill-detail">
+      <div class="pill-detail-inner">
+        <div class="pd-head">💹 INVERSIONES — PONER EL DINERO A TRABAJAR</div>
+        <p class="pd-intro">
+          Trabajar por dinero tiene un techo: las horas del día. <strong>Invertir rompe ese techo</strong> porque el capital trabaja
+          24/7 sin descanso. Manejo tres frentes con lógicas distintas: la bolsa de Estados Unidos, la bolsa colombiana y el
+          ecosistema cripto.
+        </p>
+
+        <div class="pd-sub">1. BOLSA DE NUEVA YORK (NYSE / NASDAQ)</div>
+        <ul class="pd-list">
+          <li><strong>Qué es:</strong> el mercado de valores más grande y líquido del mundo, donde cotizan las empresas más grandes del planeta.</li>
+          <li><strong>Índices clave:</strong> <em>S&amp;P 500</em> (las 500 mayores empresas de EE. UU.), <em>Dow Jones</em> (30 grandes industriales) y <em>Nasdaq</em> (fuerte carga tecnológica).</li>
+          <li><strong>Cómo se accede desde Colombia:</strong> a través de brokers internacionales y plataformas digitales que permiten comprar acciones o ETFs fraccionados desde montos pequeños.</li>
+          <li><strong>Qué es un ETF:</strong> una canasta de muchas acciones en un solo producto. Comprar un ETF del S&amp;P 500 es invertir en 500 empresas a la vez con una sola operación.</li>
+          <li><strong>Estrategias:</strong> DCA (comprar montos fijos cada mes sin importar el precio), inversión por dividendos, value investing (empresas subvaloradas) y growth (empresas de alto crecimiento).</li>
+          <li><strong>Horizonte:</strong> la bolsa premia la paciencia. Históricamente, los períodos largos suavizan la volatilidad.</li>
+        </ul>
+
+        <div class="pd-mini">
+          <b>El interés compuesto en acción:</b> aportar 200 USD al mes con un rendimiento anual del 8% durante 20 años
+          genera cerca de <b>117.000 USD</b>, habiendo aportado solo <b>48.000 USD</b> de tu bolsillo.
+          La diferencia la pone el tiempo, no el esfuerzo.
+        </div>
+
+        <div class="pd-tags">
+          <span class="pd-tag green">S&amp;P 500</span>
+          <span class="pd-tag green">ETFs</span>
+          <span class="pd-tag green">Dividendos</span>
+          <span class="pd-tag teal">DCA</span>
+          <span class="pd-tag teal">Largo plazo</span>
+        </div>
+
+        <div class="pd-sub">2. BOLSA DE COLOMBIA (BVC)</div>
+        <ul class="pd-list">
+          <li><strong>Índice principal:</strong> el MSCI COLCAP, que agrupa las acciones más representativas del mercado colombiano.</li>
+          <li><strong>Emisoras reconocidas:</strong> Ecopetrol, Bancolombia, Grupo Sura, Grupo Argos, ISA, Nutresa y Cementos Argos, entre otras.</li>
+          <li><strong>Ventajas:</strong> se invierte en pesos (sin riesgo de cambio), en empresas que conoces y usas, con cultura de dividendos y comisiones más bajas.</li>
+          <li><strong>Riesgos:</strong> menor liquidez que otros mercados, alta concentración en pocas acciones y sensibilidad a factores políticos y económicos del país.</li>
+          <li><strong>Clave:</strong> diversificar y no enamorarse de una sola acción, por muy sólida que parezca.</li>
+        </ul>
+
+        <div class="pd-sub">3. CRIPTOMONEDAS</div>
+        <ul class="pd-list">
+          <li><strong>Bitcoin:</strong> la primera criptomoneda, con una oferta máxima limitada a 21 millones de unidades. Su escasez está programada en el código.</li>
+          <li><strong>Halving:</strong> cada aproximadamente 4 años se reduce a la mitad la emisión de nuevos bitcoins, lo que históricamente ha marcado ciclos de mercado.</li>
+          <li><strong>Ethereum:</strong> además de ser una moneda, es una plataforma de contratos inteligentes donde se construyen aplicaciones descentralizadas.</li>
+          <li><strong>Stablecoins:</strong> USDT o USDC mantienen su valor atado al dólar, útiles para resguardarse de la volatilidad sin salir del ecosistema cripto.</li>
+          <li><strong>DeFi y staking:</strong> servicios financieros sin bancos, donde el capital puede generar rendimiento a cambio de asumir riesgo.</li>
+          <li><strong>Seguridad:</strong> "no son tus llaves, no son tus monedas". Guardar en billetera fría, jamás compartir la frase semilla y usar doble factor de autenticación.</li>
+          <li><strong>Volatilidad:</strong> en ciclos bajistas el mercado cripto ha caído más del 70%. Es un mercado para estómagos fuertes y capital que no se necesita en el corto plazo.</li>
+        </ul>
+        <div class="pd-tags">
+          <span class="pd-tag warm">Bitcoin</span>
+          <span class="pd-tag warm">Ethereum</span>
+          <span class="pd-tag warm">Stablecoins</span>
+          <span class="pd-tag pink">Blockchain</span>
+          <span class="pd-tag pink">DeFi</span>
+          <span class="pd-tag pink">Staking</span>
+        </div>
+
+        <div class="pd-note green">
+          <strong>Mis reglas de oro antes de invertir:</strong><br>
+          ✅ Nunca invertir dinero que necesites para vivir.<br>
+          ✅ No poner todos los huevos en la misma canasta: diversificar entre sectores y activos.<br>
+          ✅ El interés compuesto premia la paciencia, no la prisa.<br>
+          ✅ La emoción es el peor asesor financiero. El plan se hace en frío.<br>
+          ✅ "La regla número uno es no perder dinero. La regla número dos es no olvidar la regla número uno." — Warren Buffett
+        </div>
+
+        <p class="pd-hint">💡 Toca otra tarjeta para cerrar esta y abrir la siguiente.</p>
+      </div>
+    </div>
   </div>
+
 </div>
 </div>
 </div>
@@ -683,6 +1057,30 @@ var obs = new IntersectionObserver(function(entries) {
   });
 });
 document.querySelectorAll('.fade').forEach(function(el) { obs.observe(el); });
+
+// ===== TARJETAS EXPANDIBLES (Diseño / Marketing / Inversiones) =====
+function togglePill(el) {
+  var card = el.parentElement;
+  var estabaAbierta = card.classList.contains('open');
+
+  // Cierra todas las demás
+  document.querySelectorAll('.pill-card.open').forEach(function(c) {
+    c.classList.remove('open');
+  });
+
+  // Abre la seleccionada si estaba cerrada
+  if (!estabaAbierta) {
+    card.classList.add('open');
+    setTimeout(function() {
+      var rect = card.getBoundingClientRect();
+      // Si la tarjeta queda muy abajo, la acomoda suavemente en pantalla
+      if (rect.top > window.innerHeight * 0.55) {
+        var y = rect.top + window.pageYOffset - 90;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 260);
+  }
+}
 
 // ===== TELÉFONO 3D PREMIUM =====
 (function(){
