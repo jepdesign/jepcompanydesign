@@ -187,6 +187,23 @@ nav h2{font-family:'Bebas Neue';font-size:28px;color:#fff;}
 .profile-small{font-family:'Playfair Display';font-size:40px;}
 .profile-big{font-family:'Playfair Display';font-size:70px;font-weight:700;}
 .profile-text{font-size:15px;line-height:1.8;color:#333;margin-top:15px;max-width:500px;}
+.profile-name{font-size:44px;line-height:1.15;}
+.profile-name .highlight{background:linear-gradient(90deg,#001f5b,#0057b8);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.profile-subtitle{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#0057b8;font-weight:700;margin-top:10px;}
+.skill-pills{display:flex;flex-direction:column;gap:14px;margin-top:22px;max-width:520px;}
+.pill{padding:16px 20px;border-radius:16px;font-size:14px;font-weight:600;color:#fff;display:flex;align-items:flex-start;gap:14px;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:transform 0.35s ease,box-shadow 0.35s ease;}
+.pill:hover{transform:translateX(8px) scale(1.02);box-shadow:0 14px 32px rgba(0,0,0,0.3);}
+.pill i{font-size:22px;margin-top:2px;flex-shrink:0;}
+.pill strong{display:block;font-size:15px;margin-bottom:3px;letter-spacing:0.5px;}
+.pill span{font-weight:400;font-size:13px;opacity:0.92;line-height:1.5;}
+.pill-design{background:linear-gradient(135deg,#001f5b,#0077e6);}
+.pill-marketing{background:linear-gradient(135deg,#ff6a00,#ee0979);}
+.pill-invest{background:linear-gradient(135deg,#0f9b0f,#00c9a7);}
+@media(max-width:768px){
+  .profile-name{font-size:32px;}
+  .skill-pills{max-width:100%;}
+  .pill{text-align:left;}
+}
 .carousel{overflow:hidden;margin-top:20px;}
 .carousel-track{display:flex;width:max-content;animation:scrollAnim 30s linear infinite;}
 .carousel:hover .carousel-track{animation-play-state:paused;}
@@ -414,9 +431,24 @@ h2::after{content:"";width:60px;height:3px;background:#00d4ff;display:block;marg
 </div>
 <div class="profile-right">
 <div class="profile-small">Hola 🙋!</div>
-<div class="profile-big">Soy Estiben</div>
+<div class="profile-big profile-name">Soy Junior <span class="highlight">Estiben Portilla</span></div>
+<div class="profile-subtitle">23 años · Diseñador · Emprendedor · Inversionista</div>
 <div class="profile-text">
-Estudiante entusiasta y creativo con habilidades en diseño gráfico, manejo de herramientas digitales y pensamiento visual. Me especializo en crear piezas modernas, atractivas y funcionales que conectan con el público.
+Una mente multifacética que combina creatividad, estrategia y visión financiera para construir marca, negocio y patrimonio al mismo tiempo.
+</div>
+<div class="skill-pills">
+  <div class="pill pill-design">
+    <i class="fas fa-pen-nib"></i>
+    <div><strong>Diseño</strong><span>Diseño Web, Diseño Gráfico y Diseño de Interiores</span></div>
+  </div>
+  <div class="pill pill-marketing">
+    <i class="fas fa-bullhorn"></i>
+    <div><strong>Marketing & Negocios</strong><span>Marketing digital con Hotmart · Fundador y creador de AXTOON Distribuidora S.A.S</span></div>
+  </div>
+  <div class="pill pill-invest">
+    <i class="fas fa-chart-line"></i>
+    <div><strong>Inversiones</strong><span>Bolsa de Nueva York · Bolsa de Colombia · Criptomonedas</span></div>
+  </div>
 </div>
 </div>
 </div>
